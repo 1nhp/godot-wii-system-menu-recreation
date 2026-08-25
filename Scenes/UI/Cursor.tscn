@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://bhjn7yapvbq6d"]
+
+[ext_resource type="Script" uid="uid://c1imr0ygrhr4p" path="res://src/UI/Components/Cursor.cs" id="1_0b4wj"]
+[ext_resource type="Shader" uid="uid://dxgqlyyino8la" path="res://src/Shaders/Cursor.gdshader" id="1_2enou"]
+[ext_resource type="Texture2D" uid="uid://8xi33360pxvr" path="res://Assets/Sprites/Cursor/CursorNormalMasked.svg" id="2_1svhy"]
+[ext_resource type="Shader" uid="uid://b0l0p0gns6b33" path="res://src/Shaders/Blur.gdshader" id="2_iah7b"]
+[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="3_krj1r"]
+[ext_resource type="Texture2D" uid="uid://dwpumm2qfktk7" path="res://Assets/Sprites/Cursor/CursorGrabbedMasked.svg" id="4_224k7"]
+[ext_resource type="Texture2D" uid="uid://ct4a1ag2fanuo" path="res://Assets/Sprites/Cursor/CursorNormal.svg" id="4_uv853"]
+[ext_resource type="Texture2D" uid="uid://bn3c44xprfld0" path="res://Assets/Sprites/Cursor/CursorGrabbed.svg" id="7_iah7b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1svhy"]
+shader = ExtResource("2_iah7b")
+shader_parameter/offset = 4.6370002202575
+shader_parameter/opacity = 0.1650000078375
+
+[sub_resource type="Gradient" id="Gradient_2enou"]
+colors = PackedColorArray(1, 1, 1, 1, 0.09614866, 0.5627418, 0.99999815, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2enou"]
+gradient = SubResource("Gradient_2enou")
+fill_from = Vector2(0.5, 0.6)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2enou"]
+shader = ExtResource("1_2enou")
+shader_parameter/mask_texture = ExtResource("2_1svhy")
+shader_parameter/gradient_texture = SubResource("GradientTexture2D_2enou")
+shader_parameter/my_color = Color(1, 1, 1, 1)
+shader_parameter/invert_mask = true
+shader_parameter/shadow_offset = Vector2(123, 123)
+shader_parameter/shadow_color = Color(0.946533, 2.5027991e-06, 0.57488036, 1)
+
+[node name="Cursor" type="CanvasLayer" unique_id=1101014926]
+layer = 1300
+
+[node name="Control" type="Control" parent="." unique_id=1096586340 node_paths=PackedStringArray("CursorSprite", "CursorShadowSprite", "CursorGrabbedSprite", "CursorGrabbedShadowSprite")]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_0b4wj")
+CursorSprite = NodePath("Cursor")
+CursorShadowSprite = NodePath("Shadow")
+CursorGrabbedSprite = NodePath("CursorGrabbed")
+CursorGrabbedShadowSprite = NodePath("ShadowGrabbed")
+
+[node name="Shadow" type="TextureRect" parent="Control" unique_id=1896249198]
+material = SubResource("ShaderMaterial_1svhy")
+layout_mode = 0
+offset_left = -58.0
+offset_top = -66.000015
+offset_right = 84.75488
+offset_bottom = 145.2772
+scale = Vector2(0.3345, 0.33450004)
+pivot_offset = Vector2(72.49961, 96.66617)
+mouse_filter = 2
+texture = ExtResource("2_1svhy")
+expand_mode = 1
+
+[node name="ShadowGrabbed" type="TextureRect" parent="Control" unique_id=1457216046]
+visible = false
+material = SubResource("ShaderMaterial_1svhy")
+layout_mode = 0
+offset_left = -58.0
+offset_top = -66.000015
+offset_right = 84.75488
+offset_bottom = 145.2772
+scale = Vector2(0.3345, 0.33450004)
+pivot_offset = Vector2(72.49961, 96.66617)
+mouse_filter = 2
+texture = ExtResource("4_224k7")
+expand_mode = 1
+
+[node name="Cursor" type="TextureRect" parent="Control" unique_id=137325837]
+clip_children = 2
+material = SubResource("ShaderMaterial_2enou")
+layout_mode = 0
+offset_left = -62.0
+offset_top = -68.000015
+offset_right = 77.76535
+offset_bottom = 138.8527
+scale = Vector2(0.3345, 0.33450004)
+pivot_offset = Vector2(72.49961, 96.66617)
+mouse_filter = 2
+texture = ExtResource("4_uv853")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/Cursor" unique_id=966447149]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.389359
+offset_top = -12.773071
+offset_right = 26.610657
+offset_bottom = 78.22693
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.54901963, 1, 1)
+theme_override_fonts/font = ExtResource("3_krj1r")
+theme_override_font_sizes/font_size = 89
+text = "1"
+
+[node name="CursorGrabbed" type="TextureRect" parent="Control" unique_id=486611229]
+visible = false
+clip_children = 2
+material = SubResource("ShaderMaterial_2enou")
+layout_mode = 0
+offset_left = -62.0
+offset_top = -68.000015
+offset_right = 77.76535
+offset_bottom = 138.8527
+scale = Vector2(0.3345, 0.33450004)
+pivot_offset = Vector2(72.49961, 96.66617)
+texture = ExtResource("7_iah7b")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/CursorGrabbed" unique_id=1644607627]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.389359
+offset_top = -12.773071
+offset_right = 26.610657
+offset_bottom = 78.22693
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.54901963, 1, 1)
+theme_override_fonts/font = ExtResource("3_krj1r")
+theme_override_font_sizes/font_size = 89
+text = "1"

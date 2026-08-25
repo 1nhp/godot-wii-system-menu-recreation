@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 274 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Artboard1" transform="matrix(1.011104,0,0,1,0,0)">
+        <rect x="0" y="0" width="270.165" height="68.751" style="fill:none;"/>
+        <g id="Layer-1" serif:id="Layer 1" transform="matrix(3.738019,0,0,3.779528,2.967053,-1061.769057)">
+            <g id="button">
+                <g id="rect1" transform="matrix(1.017984,0,0,1.069511,-0.637955,-20.159716)">
+                    <path d="M70.421,289.499L70.421,290.544C70.421,294.691 66.883,298.058 62.526,298.058L8.422,298.058C4.065,298.058 0.527,294.691 0.527,290.544L0.527,289.499C0.527,285.352 4.065,281.985 8.422,281.985L62.526,281.985C66.883,281.985 70.421,285.352 70.421,289.499Z" style="fill:rgb(62,190,235);"/>
+                </g>
+                <path id="rect11" serif:id="rect1" d="M70.421,290.022C70.421,294.457 66.82,298.058 62.384,298.058L8.564,298.058C4.128,298.058 0.527,294.457 0.527,290.022C0.527,285.586 4.128,281.985 8.564,281.985L62.384,281.985C66.82,281.985 70.421,285.586 70.421,290.022Z" style="fill:rgb(228,233,240);"/>
+                <path id="rect27" d="M70.421,290.022C70.421,294.457 66.82,298.058 62.384,298.058L8.564,298.058C4.128,298.058 0.527,294.457 0.527,290.022C0.527,285.586 4.128,281.985 8.564,281.985L62.384,281.985C66.82,281.985 70.421,285.586 70.421,290.022Z" style="fill:url(#_Radial1);"/>
+                <path id="path1" d="M2.959,292.003C2.959,292.003 3.837,287.973 7.121,287.95C10.405,287.927 62.483,287.95 62.483,287.95C62.483,287.95 65.557,287.135 65.161,285.248C64.765,283.362 62.227,282.663 62.227,282.663L7.378,282.663C7.378,282.663 4.601,283.943 3.625,285.061C2.653,286.176 1.797,287.612 1.765,289.091C1.742,290.14 2.959,292.003 2.959,292.003Z" style="fill:white;fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="_Radial1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(34.946888,0,0,8.036797,35.47389,290.021621)"><stop offset="0" style="stop-color:rgb(227,232,239);stop-opacity:0.5"/><stop offset="0.93" style="stop-color:rgb(235,235,235);stop-opacity:0.5"/><stop offset="1" style="stop-color:rgb(206,215,226);stop-opacity:0.5"/></radialGradient>
+    </defs>
+</svg>

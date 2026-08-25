@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c4aa5x02yl18i"]
+
+[ext_resource type="Script" uid="uid://uumjhtixh6o3" path="res://src/UI/Scenes/SystemSetup01.cs" id="1_7idtn"]
+[ext_resource type="Texture2D" uid="uid://b74srk6qll2rw" path="res://Assets/Sprites/Setup/Setup01.svg" id="1_gomkd"]
+[ext_resource type="Texture2D" uid="uid://bvmbxrecqh3v" path="res://Assets/Sprites/Setup/SetupBG.svg" id="2_dwqrw"]
+[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="3_kb7qs"]
+
+[node name="SystemSetup01" type="Control" unique_id=371917464]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7idtn")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1509656081]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dwqrw")
+expand_mode = 3
+
+[node name="InstructionsImage" type="TextureRect" parent="." unique_id=1113329614]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -424.0
+offset_top = -252.0
+offset_right = 56.0
+offset_bottom = 228.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_gomkd")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=1679002764]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -284.5
+offset_top = -21.0
+offset_right = 284.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4627451, 0.47058824, 0.4627451, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("3_kb7qs")
+theme_override_font_sizes/font_size = 32
+text = "Press  to continue."
+horizontal_alignment = 1

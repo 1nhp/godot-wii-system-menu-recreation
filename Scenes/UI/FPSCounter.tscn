@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://eotwtv74eneo"]
+
+[ext_resource type="Script" uid="uid://bjsdm1lh73lvk" path="res://src/UI/Components/FPSCounter.cs" id="1_3hisr"]
+[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="1_j7qi8"]
+
+[node name="FpsCounter" type="Control" unique_id=426210929 node_paths=PackedStringArray("CounterLabel")]
+z_index = 98
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3hisr")
+CounterLabel = NodePath("Label")
+RefreshDelay = 2
+
+[node name="Label" type="Label" parent="." unique_id=1575985442]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 64.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.8047426, 0.80474263, 0.8047425, 1)
+theme_override_fonts/font = ExtResource("1_j7qi8")
+theme_override_font_sizes/font_size = 23
+text = "... FPS"

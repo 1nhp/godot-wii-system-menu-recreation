@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ObjectData" format=3 uid="uid://bokhbc4rs4evd"]
+
+[ext_resource type="Script" uid="uid://bnpflxewatp2f" path="res://Data/ObjectData.cs" id="1_gt5kf"]
+
+[resource]
+script = ExtResource("1_gt5kf")
+Object = Dictionary[String, String]({
+"Notification": "res://Scenes/UI/Notification.tscn"
+})

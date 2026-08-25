@@ -1,0 +1,472 @@
+[gd_scene format=3 uid="uid://brp8h0xvwqepo"]
+
+[ext_resource type="Script" uid="uid://coutgsiurnect" path="res://src/UI/Scenes/SystemSetup04.cs" id="1_ds5ua"]
+[ext_resource type="Texture2D" uid="uid://dskocdlgu8kx0" path="res://Assets/Sprites/Setup/SetupBG2.svg" id="2_uy3j1"]
+[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="4_ds5ua"]
+[ext_resource type="Script" uid="uid://cdo42w1tganwp" path="res://src/UI/Components/CustomButton.cs" id="5_iyd4f"]
+[ext_resource type="Theme" uid="uid://bnky6d6gnqujx" path="res://Data/Themes/SettingsHeader.tres" id="7_8qw5m"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="8_ds5ua"]
+[ext_resource type="Theme" uid="uid://b441bir40ui0e" path="res://Data/Themes/Button.tres" id="8_vpoqq"]
+[ext_resource type="Theme" uid="uid://cslta5wrvd8wo" path="res://Data/Themes/CheckButton.tres" id="8_x8f57"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="9_iyd4f"]
+[ext_resource type="Texture2D" uid="uid://bxgpuu8snudou" path="res://Assets/Sprites/Buttons/ToggleButton/ToggleButton.svg" id="9_uy3j1"]
+[ext_resource type="Script" uid="uid://cycenjys3g14d" path="res://src/UI/Components/CustomCheckButton.cs" id="12_iyd4f"]
+[ext_resource type="Script" uid="uid://dm2mf2juu0drg" path="res://src/UI/Components/CustomOptionButton.cs" id="12_wksuk"]
+
+[sub_resource type="Resource" id="Resource_ds5ua"]
+script = ExtResource("9_iyd4f")
+
+[sub_resource type="Resource" id="Resource_iyd4f"]
+script = ExtResource("9_iyd4f")
+
+[node name="SystemSetup04" type="Control" unique_id=371917464 node_paths=PackedStringArray("ConfirmButton", "HoverText", "VsyncCheckButton", "FullScreenCheckButton", "ShowFrameRateCheckButton", "SpriteResolutionDropdown", "ScreenResolutionDropdown")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ds5ua")
+ConfirmButton = NodePath("Confirm")
+HoverText = NodePath("Options/HoverText")
+VsyncCheckButton = NodePath("Options/ScrollContainer/VBoxContainer/VsyncCheckButton/TextureRect/CheckButton")
+FullScreenCheckButton = NodePath("Options/ScrollContainer/VBoxContainer/FullScreenCheckButton/TextureRect/CheckButton")
+ShowFrameRateCheckButton = NodePath("Options/ScrollContainer/VBoxContainer/ShowFPSCheckButton/TextureRect/CheckButton")
+SpriteResolutionDropdown = NodePath("Options/ScrollContainer/VBoxContainer/SpriteResolutionOptionButton/TextureRect/OptionButton")
+ScreenResolutionDropdown = NodePath("Options/ScrollContainer/VBoxContainer/ScreenResolutionOptionButton/TextureRect/OptionButton")
+metadata/_edit_horizontal_guides_ = [-192.0]
+
+[node name="BG" type="TextureRect" parent="." unique_id=76137355]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uy3j1")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="." unique_id=1571310128]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -616.0
+offset_top = 44.0
+offset_right = -24.0
+offset_bottom = 92.0
+grow_horizontal = 2
+theme = ExtResource("7_8qw5m")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1136588193]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -20.0
+offset_right = -131.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_ds5ua")
+theme_override_font_sizes/font_size = 32
+text = "Video"
+
+[node name="Confirm" type="Button" parent="." unique_id=1890019032]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -399.02777
+offset_top = -112.0
+offset_right = -8.666748
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(195.02777, 48)
+offset_transform_enabled = true
+theme = ExtResource("8_vpoqq")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("4_ds5ua")
+text = "Confirm"
+script = ExtResource("5_iyd4f")
+metadata/_custom_type_script = "uid://cdo42w1tganwp"
+
+[node name="Options" type="Control" parent="." unique_id=1283910873]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.5
+offset_top = -174.0
+offset_right = 231.5
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HoverText" type="Label" parent="Options" unique_id=1681890665]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = 2.0
+offset_right = 324.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_ds5ua")
+theme_override_font_sizes/font_size = 32
+text = "Move cursor on an option to see details."
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Options" unique_id=1160876971]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.5
+offset_top = -176.0
+offset_right = 235.5
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_hint_mode = 3
+tile_scroll_hint = true
+script = ExtResource("8_ds5ua")
+wheel_scroll_damper = SubResource("Resource_ds5ua")
+dragging_scroll_damper = SubResource("Resource_iyd4f")
+drag_with_mouse = false
+hide_scrollbar_over_time = true
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/ScrollContainer" unique_id=879113385]
+custom_minimum_size = Vector2(-1, 420)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 82
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VsyncCheckButton" type="Control" parent="Options/ScrollContainer/VBoxContainer" unique_id=1177851124]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="Options/ScrollContainer/VBoxContainer/VsyncCheckButton" unique_id=245944727]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 11.0
+offset_right = 482.0
+offset_bottom = 84.0
+texture = ExtResource("9_uy3j1")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CheckButton" type="CheckButton" parent="Options/ScrollContainer/VBoxContainer/VsyncCheckButton/TextureRect" unique_id=313056730]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -39.5
+offset_right = -11.77594
+offset_bottom = 40.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(51, 40)
+offset_transform_enabled = true
+mouse_filter = 1
+theme = ExtResource("8_x8f57")
+icon_alignment = 2
+expand_icon = true
+script = ExtResource("12_iyd4f")
+ClickSound = "Click"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Name" type="Label" parent="Options/ScrollContainer/VBoxContainer/VsyncCheckButton/TextureRect" unique_id=1768732219]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -19.5
+offset_right = 350.21454
+offset_bottom = 22.5
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_ds5ua")
+theme_override_font_sizes/font_size = 27
+text = "Vertical Synchronization"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="FullScreenCheckButton" type="Control" parent="Options/ScrollContainer/VBoxContainer" unique_id=33749885]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="Options/ScrollContainer/VBoxContainer/FullScreenCheckButton" unique_id=815805128]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 11.0
+offset_right = 482.0
+offset_bottom = 84.0
+texture = ExtResource("9_uy3j1")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CheckButton" type="CheckButton" parent="Options/ScrollContainer/VBoxContainer/FullScreenCheckButton/TextureRect" unique_id=960555463]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -39.5
+offset_right = -11.77594
+offset_bottom = 40.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(51, 40)
+offset_transform_enabled = true
+mouse_filter = 1
+theme = ExtResource("8_x8f57")
+icon_alignment = 2
+expand_icon = true
+script = ExtResource("12_iyd4f")
+ClickSound = "Click"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Name" type="Label" parent="Options/ScrollContainer/VBoxContainer/FullScreenCheckButton/TextureRect" unique_id=1405114929]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -19.5
+offset_right = 350.21454
+offset_bottom = 22.5
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_ds5ua")
+theme_override_font_sizes/font_size = 27
+text = "Fullscreen"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ShowFPSCheckButton" type="Control" parent="Options/ScrollContainer/VBoxContainer" unique_id=586415321]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="Options/ScrollContainer/VBoxContainer/ShowFPSCheckButton" unique_id=2040337564]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 11.0
+offset_right = 482.0
+offset_bottom = 84.0
+texture = ExtResource("9_uy3j1")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CheckButton" type="CheckButton" parent="Options/ScrollContainer/VBoxContainer/ShowFPSCheckButton/TextureRect" unique_id=389006316]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -39.5
+offset_right = -11.77594
+offset_bottom = 40.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(51, 40)
+offset_transform_enabled = true
+mouse_filter = 1
+theme = ExtResource("8_x8f57")
+icon_alignment = 2
+expand_icon = true
+script = ExtResource("12_iyd4f")
+ClickSound = "Click"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Name" type="Label" parent="Options/ScrollContainer/VBoxContainer/ShowFPSCheckButton/TextureRect" unique_id=90575207]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -19.5
+offset_right = 350.21454
+offset_bottom = 22.5
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_ds5ua")
+theme_override_font_sizes/font_size = 27
+text = "Show Framerate"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="SpriteResolutionOptionButton" type="Control" parent="Options/ScrollContainer/VBoxContainer" unique_id=918783204]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="Options/ScrollContainer/VBoxContainer/SpriteResolutionOptionButton" unique_id=1682196571]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 11.0
+offset_right = 482.0
+offset_bottom = 84.0
+texture = ExtResource("9_uy3j1")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="OptionButton" type="OptionButton" parent="Options/ScrollContainer/VBoxContainer/SpriteResolutionOptionButton/TextureRect" unique_id=938389852]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -27.5
+offset_right = -16.0
+offset_bottom = 28.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(51, 40)
+offset_transform_enabled = true
+mouse_filter = 1
+theme = ExtResource("8_x8f57")
+icon_alignment = 2
+expand_icon = true
+item_count = 4
+popup/item_0/text = "480p"
+popup/item_0/id = 0
+popup/item_1/text = "720p"
+popup/item_1/id = 1
+popup/item_2/text = "1080p"
+popup/item_2/id = 2
+popup/item_3/text = "4K"
+popup/item_3/id = 3
+script = ExtResource("12_wksuk")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Name" type="Label" parent="Options/ScrollContainer/VBoxContainer/SpriteResolutionOptionButton/TextureRect" unique_id=518018652]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -19.5
+offset_right = 248.0
+offset_bottom = 22.5
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_ds5ua")
+theme_override_font_sizes/font_size = 27
+text = "Sprite Resolution"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ScreenResolutionOptionButton" type="Control" parent="Options/ScrollContainer/VBoxContainer" unique_id=1173121285]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="Options/ScrollContainer/VBoxContainer/ScreenResolutionOptionButton" unique_id=1342961475]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 11.0
+offset_right = 482.0
+offset_bottom = 84.0
+texture = ExtResource("9_uy3j1")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="OptionButton" type="OptionButton" parent="Options/ScrollContainer/VBoxContainer/ScreenResolutionOptionButton/TextureRect" unique_id=1933417915]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -27.5
+offset_right = -16.0
+offset_bottom = 28.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(51, 40)
+offset_transform_enabled = true
+mouse_filter = 1
+theme = ExtResource("8_x8f57")
+icon_alignment = 2
+expand_icon = true
+item_count = 10
+popup/item_0/text = "800x600 (480P)"
+popup/item_0/id = 0
+popup/item_1/text = "1024x600 (600P)"
+popup/item_1/id = 1
+popup/item_2/text = "1280x1024 (720P)"
+popup/item_2/id = 2
+popup/item_3/text = "1280x720 (720P)"
+popup/item_3/id = 3
+popup/item_4/text = "1366x768 (768P)"
+popup/item_4/id = 4
+popup/item_5/text = "1440x900 (800P)"
+popup/item_5/id = 5
+popup/item_6/text = "1600x900 (900P)"
+popup/item_6/id = 6
+popup/item_7/text = "1920x1080 (1080P)"
+popup/item_7/id = 7
+popup/item_8/text = "2560x1440 (1440P)"
+popup/item_8/id = 8
+popup/item_9/text = "3840x2160 (4K)"
+popup/item_9/id = 9
+script = ExtResource("12_wksuk")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Name" type="Label" parent="Options/ScrollContainer/VBoxContainer/ScreenResolutionOptionButton/TextureRect" unique_id=928032585]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -12.0
+offset_right = 218.0
+offset_bottom = 30.0
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_ds5ua")
+theme_override_font_sizes/font_size = 22
+text = "Screen Resolution"
+metadata/_smooth_scroll_default_mouse_filter_set = true

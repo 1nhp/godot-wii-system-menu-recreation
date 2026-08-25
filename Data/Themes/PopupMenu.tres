@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://cfjtww2pry8rj"]
+
+[ext_resource type="Texture2D" uid="uid://bwyyxgtwuaylx" path="res://Assets/Sprites/Buttons/ToggleButton/ToggleButton_720.svg" id="2_p3noy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sbjtl"]
+texture = ExtResource("2_p3noy")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
+[resource]
+PopupMenu/colors/font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_sbjtl")

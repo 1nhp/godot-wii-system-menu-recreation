@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://3k5xi5uqqbia"]
+
+[ext_resource type="Texture2D" uid="uid://dskocdlgu8kx0" path="res://Assets/Sprites/Setup/SetupBG2.svg" id="1_05lbj"]
+[ext_resource type="Script" uid="uid://clglif31gi7xc" path="res://src/UI/Scenes/SystemSetup03.cs" id="1_v1h3l"]
+[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="2_tv04y"]
+[ext_resource type="Theme" uid="uid://ddicqe7g5g0qf" path="res://Data/Themes/ToggleButton.tres" id="3_52dow"]
+[ext_resource type="PackedScene" uid="uid://cd2ls8houwwfx" path="res://Scenes/UI/SelectionHighlight.tscn" id="5_45ic8"]
+[ext_resource type="Script" uid="uid://cdo42w1tganwp" path="res://src/UI/Components/CustomButton.cs" id="5_v1h3l"]
+[ext_resource type="Theme" uid="uid://bnky6d6gnqujx" path="res://Data/Themes/SettingsHeader.tres" id="7_j6drl"]
+[ext_resource type="Theme" uid="uid://b441bir40ui0e" path="res://Data/Themes/Button.tres" id="9_pioln"]
+
+[node name="SystemSetup03" type="Control" unique_id=371917464 node_paths=PackedStringArray("Buttons", "ConfirmButton", "_highlight")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v1h3l")
+Buttons = NodePath("Buttons")
+ConfirmButton = NodePath("Confirm")
+_highlight = NodePath("SelectionHighlight")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1479784070]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_05lbj")
+expand_mode = 3
+
+[node name="Buttons" type="Control" parent="." unique_id=431887398]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+
+[node name="English" type="Button" parent="Buttons" unique_id=1904393208]
+custom_minimum_size = Vector2(128, 96)
+layout_mode = 0
+offset_left = -276.0
+offset_top = -148.0
+offset_right = 316.0
+offset_bottom = -52.0
+pivot_offset = Vector2(296, 49)
+offset_transform_enabled = true
+theme = ExtResource("3_52dow")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_font_sizes/font_size = 40
+text = "English"
+script = ExtResource("5_v1h3l")
+ClickSound = "ButtonToggled"
+metadata/_custom_type_script = "uid://cdo42w1tganwp"
+
+[node name="Francais" type="Button" parent="Buttons" unique_id=424652781]
+custom_minimum_size = Vector2(128, 96)
+layout_mode = 0
+offset_left = -276.0
+offset_top = -28.0
+offset_right = 316.0
+offset_bottom = 68.0
+pivot_offset = Vector2(296, 48)
+offset_transform_enabled = true
+theme = ExtResource("3_52dow")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("2_tv04y")
+theme_override_font_sizes/font_size = 40
+text = "Francais"
+script = ExtResource("5_v1h3l")
+ClickSound = "ButtonToggled"
+metadata/_custom_type_script = "uid://cdo42w1tganwp"
+
+[node name="Espanol" type="Button" parent="Buttons" unique_id=984921502]
+custom_minimum_size = Vector2(128, 96)
+layout_mode = 0
+offset_left = -276.0
+offset_top = 93.0
+offset_right = 316.0
+offset_bottom = 189.0
+pivot_offset = Vector2(296, 47)
+offset_transform_enabled = true
+theme = ExtResource("3_52dow")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("2_tv04y")
+theme_override_font_sizes/font_size = 40
+text = "Espanol"
+script = ExtResource("5_v1h3l")
+ClickSound = "ButtonToggled"
+metadata/_custom_type_script = "uid://cdo42w1tganwp"
+
+[node name="SelectionHighlight" parent="." unique_id=2078705897 instance=ExtResource("5_45ic8")]
+visible = false
+layout_mode = 0
+offset_left = 640.0
+offset_top = 144.0
+offset_right = 652.0
+offset_bottom = 164.0
+
+[node name="Panel" type="Panel" parent="." unique_id=1571310128]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -616.0
+offset_top = 44.0
+offset_right = -24.0
+offset_bottom = 92.0
+grow_horizontal = 2
+theme = ExtResource("7_j6drl")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1136588193]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -20.0
+offset_right = -131.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("2_tv04y")
+theme_override_font_sizes/font_size = 32
+text = "Language"
+horizontal_alignment = 1
+
+[node name="Confirm" type="Button" parent="." unique_id=1890019032]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -399.02777
+offset_top = -112.0
+offset_right = -8.666748
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(195.02777, 48)
+offset_transform_enabled = true
+theme = ExtResource("9_pioln")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("2_tv04y")
+theme_override_font_sizes/font_size = 40
+text = "Confirm"
+script = ExtResource("5_v1h3l")
+metadata/_custom_type_script = "uid://cdo42w1tganwp"
+
+[node name="Back" type="Button" parent="." unique_id=1129110949]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1264.0
+offset_top = -112.0
+offset_right = -873.639
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(195.02777, 48)
+offset_transform_enabled = true
+theme = ExtResource("9_pioln")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("2_tv04y")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+script = ExtResource("5_v1h3l")
+metadata/_custom_type_script = "uid://cdo42w1tganwp"

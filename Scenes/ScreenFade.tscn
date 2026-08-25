@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8w2y13mwyd"]
+
+[ext_resource type="Script" uid="uid://d0ahgfmhk8pkc" path="res://src/VFX/ScreenFade.cs" id="1_mpcox"]
+
+[node name="ScreenFade" type="Control" unique_id=1268962442 node_paths=PackedStringArray("Screen")]
+z_index = 98
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mpcox")
+Screen = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=834929242]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
