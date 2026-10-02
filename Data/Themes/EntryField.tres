@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://rx3rnw788w6t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7qrw"]
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 20
+
+[resource]
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+LineEdit/font_sizes/font_size = 18
+LineEdit/styles/normal = SubResource("StyleBoxFlat_j7qrw")

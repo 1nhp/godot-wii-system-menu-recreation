@@ -2,11 +2,28 @@
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
 resource_name = "Reverb"
-room_size = 0.89
+room_size = 0.69
 damping = 1.0
-spread = 0.0
-hipass = 1.0
+spread = 0.37
+hipass = 0.56
 wet = 0.04
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
+resource_name = "Reverb"
+room_size = 0.01
+damping = 0.03
+hipass = 0.02
+dry = 0.49
+wet = 0.01
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n8wo2"]
+resource_name = "Reverb"
+room_size = 0.18
+damping = 1.0
+spread = 0.02
+hipass = 0.02
+dry = 0.09
+wet = 0.01
 
 [resource]
 bus/1/name = &"Sounds"
@@ -15,7 +32,7 @@ bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = 0.0
 bus/1/send = &"Master"
-bus/2/name = &"Buttons"
+bus/2/name = &"Reverb High"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
@@ -23,3 +40,19 @@ bus/2/volume_db = 0.0
 bus/2/send = &"Sounds"
 bus/2/effect/0/effect = SubResource("AudioEffectReverb_g28q7")
 bus/2/effect/0/enabled = true
+bus/3/name = &"Reverb Low"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
+bus/3/effect/0/enabled = true
+bus/4/name = &"Reverb Lowest"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"Master"
+bus/4/effect/0/effect = SubResource("AudioEffectReverb_n8wo2")
+bus/4/effect/0/enabled = true

@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 using UI.Components;
 using Utils;
 
-public partial class SystemSetup04 : Control
+public partial class SystemSetup04 : SystemMenuController
 {
-	[Export] public Button ConfirmButton { get; set; }
 	[Export] public Label HoverText { get; set; }
 
 	[Export] public CustomCheckButton VsyncCheckButton { get; set; }
@@ -34,8 +33,8 @@ public partial class SystemSetup04 : Control
 
 	public override void _Ready()
 	{
-		ConfirmButton.Pressed += _onConfirmButtonPressed;
-
+		base._Ready();
+		
 		VsyncCheckButton.Toggled += _onVsyncCheckButtonToggled;
 		FullScreenCheckButton.Toggled += _onFullScreenCheckButtonToggled;
 		ShowFrameRateCheckButton.Toggled += _onFrameRateCheckButtonToggled;
@@ -66,7 +65,7 @@ public partial class SystemSetup04 : Control
 		var notification =
 			ObjectHelper.Create<Notification>("Notification", Vector2.Zero, GetTree().CurrentScene.GetPath());
 		notification.Message = "Are you sure you want to change the screen resolution?\n\n" +
-		                       "doing this might result in a `No Signal` screen on some monitors continue? ";
+							   "doing this might result in a `No Signal` screen on some monitors continue? ";
 		notification._ConfirmButtonText = "Set resolution";
 
 		int selectedId = (int)id;
@@ -108,8 +107,6 @@ public partial class SystemSetup04 : Control
 	
 	public override void _ExitTree()
 	{
-		ConfirmButton.Pressed -= _onConfirmButtonPressed;
-
 		VsyncCheckButton.Toggled -= _onVsyncCheckButtonToggled;
 		FullScreenCheckButton.Toggled -= _onFullScreenCheckButtonToggled;
 		ShowFrameRateCheckButton.Toggled -= _onFrameRateCheckButtonToggled;
@@ -169,15 +166,5 @@ public partial class SystemSetup04 : Control
 			FPSCounter.Instance.Enable();
 		else
 			FPSCounter.Instance.Disable();
-	}
-
-	private async void _onConfirmButtonPressed()
-	{
-		MouseBehaviorRecursive = MouseBehaviorRecursiveEnum.Disabled;
-
-		await SceneManager.Instance.ChangeScreenFadeScene(
-			0.5f,
-            "res://Scenes/SystemSetup04.tscn"
-		);
 	}
 }
