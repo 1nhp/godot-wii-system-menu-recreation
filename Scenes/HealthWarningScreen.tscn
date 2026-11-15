@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://2v5bg8cb2o5q"]
+
+[ext_resource type="Theme" uid="uid://c0hdjlwwjhvjv" path="res://Data/Themes/TextWhite.tres" id="1_1ll8h"]
+[ext_resource type="Script" uid="uid://n6dmlwy84w5f" path="res://src/UI/Scenes/HealthWarningScreen.cs" id="1_yrej2"]
+[ext_resource type="Texture2D" uid="uid://c8ept70v3x6it" path="res://Assets/Sprites/ReferenceImages/Screenshot_20261007_164839.png" id="2_rl150"]
+
+[node name="HealthWarningScreen" type="Control" unique_id=923748723 node_paths=PackedStringArray("ContinueTextLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yrej2")
+ContinueTextLabel = NodePath("ContinueText")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=461361450]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="InfoText" type="RichTextLabel" parent="." unique_id=813040490]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -395.67578
+offset_top = -284.0
+offset_right = 395.67578
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1ll8h")
+theme_override_constants/line_separation = 6
+theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[font_size=58][color=white]⚠[color=white][font_size=44][b]WARNING-HEALTH AND SAFETY[/b][/font_size]
+[font_size=34]
+BEFORE PLAYING, READ YOUR OPERATIONS MANUAL FOR IMPORTANT INFORMATION ABOUT YOUR HEALTH AND SAFETY.
+
+[font_size=27]Also online at[font_size=33]
+www.nintendo.com/healthsafety/
+[font_size=37]"
+horizontal_alignment = 1
+
+[node name="ContinueText" type="RichTextLabel" parent="." unique_id=1382932172]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -395.67578
+offset_top = 220.0
+offset_right = 395.67578
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1ll8h")
+theme_override_constants/line_separation = 6
+theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[font=res://Assets/Fonts/CafeSTD.ttf][pulse freq=2.5 color=#0000]Press  to continue.[/pulse][/font]"
+horizontal_alignment = 1
+
+[node name="Screenshot20261007164839" type="Sprite2D" parent="." unique_id=1175543420]
+visible = false
+position = Vector2(640, 360)
+scale = Vector2(0.6666666, 0.71784645)
+texture = ExtResource("2_rl150")

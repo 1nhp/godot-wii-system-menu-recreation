@@ -18,11 +18,11 @@ wet = 0.01
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n8wo2"]
 resource_name = "Reverb"
-room_size = 0.18
-damping = 1.0
+room_size = 0.05
+damping = 0.09
 spread = 0.02
 hipass = 0.02
-dry = 0.09
+dry = 0.01
 wet = 0.01
 
 [resource]
@@ -45,7 +45,7 @@ bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = 0.0
-bus/3/send = &"Master"
+bus/3/send = &"Sounds"
 bus/3/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
 bus/3/effect/0/enabled = true
 bus/4/name = &"Reverb Lowest"
@@ -53,6 +53,12 @@ bus/4/solo = false
 bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = 0.0
-bus/4/send = &"Master"
+bus/4/send = &"Sounds"
 bus/4/effect/0/effect = SubResource("AudioEffectReverb_n8wo2")
 bus/4/effect/0/enabled = true
+bus/5/name = &"Music"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &"Master"

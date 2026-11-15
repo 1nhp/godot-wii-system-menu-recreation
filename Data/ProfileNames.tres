@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ProfileNamesData" format=3 uid="uid://okwvbxmff8bm"]
+
+[ext_resource type="Script" uid="uid://cd4j481bvdi8e" path="res://Data/ProfileNamesData.cs" id="1_5r5ih"]
+
+[resource]
+script = ExtResource("1_5r5ih")
+Names = Array[String](["John", "Joseph", "Jason", "Sam", "Chris", "Marinet", "Adam", "Roger", "Craig", "Smith", "Jordan", "Clover", "Toriso", "Toria", "Maria", "Kihiro", "Nate", "Jack", "CoolGuy234988", "undefined", "Jiba", "Nyan"])

@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Core.Managers;
 using Godot;
 
 namespace UI.Components;
@@ -33,6 +34,8 @@ public partial class PopupAnimator : Node
 		switch (anim)
 		{
 			case Animations.In:
+				SoundManager.Instance.PlaySound("PopupMenuOpen", 0.9f, 1f, true);
+				
 				_target.Show();
 				_tween.SetEase(Tween.EaseType.Out);
 				_target.Scale = Vector2.Zero;
@@ -46,6 +49,8 @@ public partial class PopupAnimator : Node
 				
 				break;
 			case Animations.Out:
+				SoundManager.Instance.PlaySound("PopupMenuClose", 0.9f, 1f, true);
+				
 				_tween.SetEase(Tween.EaseType.In);
 				_tween.TweenProperty(_target, "scale", Vector2.Zero, 0.25);
 				_tween.Parallel().TweenProperty(_target, "modulate:a", 0, 0.15);

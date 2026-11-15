@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnsk3bd66s6dt" path="res://src/UI/Components/Notification.cs" id="1_tg7bs"]
 [ext_resource type="Texture2D" uid="uid://cys6ei5clrkd7" path="res://Assets/Sprites/ReferenceImages/0000000100000002_2026-08-12_17-19-20.png" id="2_coavg"]
-[ext_resource type="Texture2D" uid="uid://c54ewrdv87udf" path="res://Assets/Sprites/Notification/NotificationBG_1080.svg" id="2_tg7bs"]
+[ext_resource type="Texture2D" uid="uid://2kfncidk8txi" path="res://Assets/Sprites/NotificationBG.svg" id="2_tg7bs"]
 [ext_resource type="FontFile" uid="uid://bnyxuus7rvhti" path="res://Assets/Fonts/FOT-Greco Std DB.ttf" id="3_sqm8t"]
 [ext_resource type="Theme" uid="uid://7e8ei8rdvfw5" path="res://Data/Themes/ButtonOutline.tres" id="4_tg7bs"]
 [ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="5_oha0j"]

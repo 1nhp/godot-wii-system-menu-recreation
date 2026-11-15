@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bgpykoryvtwsg"]
+
+[ext_resource type="Theme" uid="uid://bx0rqjc1p5t5b" path="res://Data/Themes/TextGray2.tres" id="1_vi3ji"]
+[ext_resource type="Script" uid="uid://c7se48qvur123" path="res://src/UI/Widgets/Clock.cs" id="1_xp0hp"]
+[ext_resource type="FontFile" uid="uid://dmvpretuujspn" path="res://Assets/Fonts/Digital-7.ttf" id="3_6yg72"]
+
+[node name="Clock" type="Control" unique_id=1747323017 node_paths=PackedStringArray("DateLabel", "TimeLabel")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -76.0
+offset_right = 72.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xp0hp")
+DateLabel = NodePath("Date")
+TimeLabel = NodePath("Time")
+
+[node name="Date" type="Label" parent="." unique_id=1129440680]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = -88.0
+offset_right = 66.5
+offset_bottom = -13.1875
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_vi3ji")
+theme_override_colors/font_color = Color(0.4862745, 0.49019608, 0.49019608, 1)
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 42
+text = "Date"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Time" type="RichTextLabel" parent="." unique_id=880371886]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -149.40625
+offset_right = 131.0
+offset_bottom = -74.59375
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_vi3ji")
+theme_override_colors/default_color = Color(0.60784316, 0.60784316, 0.60784316, 1)
+theme_override_fonts/normal_font = ExtResource("3_6yg72")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "8 17 PM"
+horizontal_alignment = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Time2" type="RichTextLabel" parent="." unique_id=1613566124]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -154.0
+offset_right = 16.0
+offset_bottom = -79.1875
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_filter = 1
+theme = ExtResource("1_vi3ji")
+theme_override_colors/default_color = Color(0.60784316, 0.60784316, 0.60784316, 1)
+theme_override_fonts/normal_font = ExtResource("3_6yg72")
+theme_override_font_sizes/normal_font_size = 83
+bbcode_enabled = true
+text = "[pulse freq=2 color=#ffffff00]:[/pulse]"
+autowrap_mode = 0
+horizontal_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true

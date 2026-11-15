@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400.05 226.871">
+  <defs>
+    <style>
+      .cls-1{fill:none;stroke:#b1b1b5;stroke-width:7;stroke-miterlimit:10}
+    </style>
+  </defs>
+  <title>Artboard 1</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path d="M373.836 211.631 C259.907 217.386 31.612 211.631 31.612 211.631 C31.612 211.631 16.791 211.409 10.74 193.558 C4.689 175.708 10.74 29.276 10.74 29.276 C10.74 29.276 13.595 8.404 31.612 8.404 C49.629 8.404 369.907 8.404 369.907 8.404 C369.907 8.404 389.401 5.974 389.401 27.898 C389.401 49.821 394.062 138.535 389.401 193.558 C388.73 201.48 381.777 211.23 373.836 211.631 Z" class="cls-1"/>
+  </g>
+</svg>

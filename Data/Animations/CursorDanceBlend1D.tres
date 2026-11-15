@@ -1,0 +1,15 @@
+[gd_resource type="AnimationNodeBlendSpace1D" format=3 uid="uid://cyy0vg1nm517l"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lofu2"]
+animation = &"Dance"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dyora"]
+animation = &"RESET"
+
+[resource]
+blend_point_0/node = SubResource("AnimationNodeAnimation_lofu2")
+blend_point_0/pos = 1.0
+blend_point_0/name = &"Dance"
+blend_point_1/node = SubResource("AnimationNodeAnimation_dyora")
+blend_point_1/pos = -1.0
+blend_point_1/name = &"RESET"

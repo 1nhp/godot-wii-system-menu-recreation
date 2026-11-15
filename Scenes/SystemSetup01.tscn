@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c4aa5x02yl18i"]
 
 [ext_resource type="Script" uid="uid://uumjhtixh6o3" path="res://src/UI/Scenes/SystemSetup01.cs" id="1_7idtn"]
-[ext_resource type="Texture2D" uid="uid://b74srk6qll2rw" path="res://Assets/Sprites/Setup/Setup01.svg" id="1_gomkd"]
-[ext_resource type="Texture2D" uid="uid://bvmbxrecqh3v" path="res://Assets/Sprites/Setup/SetupBG.svg" id="2_dwqrw"]
-[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="3_kb7qs"]
+[ext_resource type="Texture2D" uid="uid://duarbpwsi5uqx" path="res://Assets/Sprites/Setup01/Setup01.svg" id="1_gomkd"]
+[ext_resource type="Texture2D" uid="uid://cpw6cp3ba5yd8" path="res://Assets/Sprites/Backgrounds/SetupBG.svg" id="2_dwqrw"]
+[ext_resource type="Theme" uid="uid://c0eh16o87mhu3" path="res://Data/Themes/TextGray.tres" id="4_7idtn"]
 
 [node name="SystemSetup01" type="Control" unique_id=371917464]
 layout_mode = 3
@@ -53,9 +53,8 @@ offset_right = 284.5
 offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.4627451, 0.47058824, 0.4627451, 1)
+theme = ExtResource("4_7idtn")
 theme_override_constants/line_spacing = -5
-theme_override_fonts/font = ExtResource("3_kb7qs")
 theme_override_font_sizes/font_size = 32
 text = "Press  to continue."
 horizontal_alignment = 1

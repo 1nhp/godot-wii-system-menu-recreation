@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      .cls-1{fill:url(#linear-gradient-1)}
+    </style>
+    <linearGradient id="linear-gradient-1" x1="200" y1="94.534" x2="200" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0.102" stop-color="#cecfd7"/>
+      <stop offset="0.8211" stop-color="#b5b6bd"/>
+    </linearGradient>
+  </defs>
+  <title>SystemMenuBG2</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path d="M400 0 L400 400 L0 400 L0 0" class="cls-1"/>
+  </g>
+</svg>

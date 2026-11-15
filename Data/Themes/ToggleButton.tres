@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://ddicqe7g5g0qf"]
 
-[ext_resource type="Texture2D" uid="uid://bxgpuu8snudou" path="res://Assets/Sprites/Buttons/ToggleButton/ToggleButton.svg" id="1_fmws3"]
+[ext_resource type="Texture2D" uid="uid://ckdr1lhii8b5o" path="res://Assets/Sprites/Buttons/ToggleButton.svg" id="1_fmws3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1mj67"]
 texture = ExtResource("1_fmws3")
@@ -14,7 +14,6 @@ modulate_color = Color(0.16565639, 0.16565642, 0.16565639, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vigk4"]
 texture = ExtResource("1_fmws3")
-region_rect = Rect2(0, 0, 402, 76)
 
 [resource]
 Button/colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)

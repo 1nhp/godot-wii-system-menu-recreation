@@ -39,10 +39,10 @@ public partial class ObjectHelper : Node
 
 		if (instance is Node2D node2D)
 			node2D.Position = position;
-
-		parent.AddChild(instance);
-		ResolutionManager.Instance.SetResolution(ResolutionManager.Instance.resolution);
+		if (instance is CanvasLayer canvasLayer)
+			canvasLayer.Offset = position;
 		
+		parent.AddChild(instance);
 		return instance;
 	}
 }

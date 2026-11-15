@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://c0eh16o87mhu3"]
+
+[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="1_thjiv"]
+
+[resource]
+Label/colors/font_color = Color(0.4627451, 0.47058824, 0.4627451, 1)
+Label/fonts/font = ExtResource("1_thjiv")

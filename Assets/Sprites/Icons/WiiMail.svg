@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 73.018 46.273">
+  <defs>
+    <style>
+      .cls-1{fill:#a9a9a9}
+    </style>
+  </defs>
+  <title>Untitled-1</title>
+  <g id="Asset_1" data-name="Asset 1">
+    <path d="M0 5.014 C0 2.245 2.245 0 5.014 0 L68.003 0 C70.773 0 73.018 2.245 73.018 5.014 L73.018 9.573 L36.509 26.064 L0 9.573 L0 9.573 Z M36.509 30.305 L73.018 13.827 L73.018 41.258 C73.018 44.028 70.773 46.273 68.003 46.273 L5.014 46.273 C2.245 46.273 0 44.028 0 41.258 L0 13.827 Z" class="cls-1"/>
+  </g>
+</svg>

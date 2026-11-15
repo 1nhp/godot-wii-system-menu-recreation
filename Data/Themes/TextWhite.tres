@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://c0hdjlwwjhvjv"]
+
+[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="1_ndy32"]
+
+[resource]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/fonts/font = ExtResource("1_ndy32")

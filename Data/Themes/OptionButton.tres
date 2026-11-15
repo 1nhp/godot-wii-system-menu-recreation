@@ -1,0 +1,42 @@
+[gd_resource type="Theme" format=3 uid="uid://c58nnxr2xxnyj"]
+
+[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="1_f1svx"]
+
+[sub_resource type="DPITexture" id="DPITexture_sbjtl"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_d88ny"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vigk4"]
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 12.0
+expand_margin_bottom = 12.0
+region_rect = Rect2(15, 0, 1578, 303)
+
+[resource]
+CheckButton/colors/font_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+CheckButton/colors/font_focus_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+CheckButton/colors/font_hover_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+CheckButton/colors/font_hover_pressed_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+CheckButton/colors/font_pressed_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+CheckButton/font_sizes/font_size = 48
+CheckButton/fonts/font = ExtResource("1_f1svx")
+CheckButton/icons/checked = SubResource("DPITexture_sbjtl")
+CheckButton/icons/unchecked = SubResource("DPITexture_d88ny")
+CheckButton/styles/disabled = SubResource("StyleBoxTexture_vigk4")
+CheckButton/styles/disabled_mirrored = SubResource("StyleBoxTexture_vigk4")
+CheckButton/styles/focus = SubResource("StyleBoxTexture_vigk4")
+CheckButton/styles/hover = SubResource("StyleBoxTexture_vigk4")
+CheckButton/styles/hover_mirrored = SubResource("StyleBoxTexture_vigk4")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxTexture_vigk4")
+CheckButton/styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_vigk4")
+CheckButton/styles/normal = SubResource("StyleBoxTexture_vigk4")
+CheckButton/styles/normal_mirrored = SubResource("StyleBoxTexture_vigk4")
+CheckButton/styles/pressed = SubResource("StyleBoxTexture_vigk4")
+CheckButton/styles/pressed_mirrored = SubResource("StyleBoxTexture_vigk4")

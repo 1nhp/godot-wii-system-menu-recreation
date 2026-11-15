@@ -2,7 +2,7 @@ using Godot;
 using System;
 namespace Core.Managers;
 
-public partial class SoundManager : Node2D
+public partial class SoundManager : Node
 {
 	public static SoundManager Instance { get; private set; }
 
@@ -11,23 +11,64 @@ public partial class SoundManager : Node2D
 		Instance = this;
 	}
 
-	public void PlaySound(NodePath node, float minPitch = 1, float maxPitch = 1, bool randomPitch = false)
+	public void PlaySound(
+		NodePath node,
+		float minPitch = 1f,
+		float maxPitch = 1f,
+		bool randomPitch = false)
 	{
-		var soundnode = GetNodeOrNull(node);
+		var soundNode = GetNodeOrNull(node);
 
-		switch (soundnode)
+		switch (soundNode)
 		{
 			case AudioStreamPlayer player:
-				if (randomPitch) player.PitchScale = (float)GD.RandRange(minPitch, maxPitch);
-				player.Play();
+				Play(player, minPitch, maxPitch, randomPitch);
 				break;
-			
+
 			case AudioStreamPlayer2D player2D:
-			{
-				if (randomPitch) player2D.PitchScale = (float)GD.RandRange(minPitch, maxPitch);
-				player2D.Play();
+				Play(player2D, minPitch, maxPitch, randomPitch);
 				break;
-			}
 		}
+	}
+
+	public void StopSound(NodePath node)
+	{
+		var soundNode = GetNodeOrNull(node);
+
+		switch (soundNode)
+		{
+			case AudioStreamPlayer player:
+				player.Stop();
+				GD.Print("aa shit");
+				break;
+
+			case AudioStreamPlayer2D player2D:
+				player2D.Stop();
+				break;
+		}
+	}
+
+	private static void Play(
+		AudioStreamPlayer player,
+		float minPitch,
+		float maxPitch,
+		bool randomPitch)
+	{
+		if (randomPitch)
+			player.PitchScale = (float)GD.RandRange(minPitch, maxPitch);
+
+		player.Play();
+	}
+
+	private static void Play(
+		AudioStreamPlayer2D player,
+		float minPitch,
+		float maxPitch,
+		bool randomPitch)
+	{
+		if (randomPitch)
+			player.PitchScale = (float)GD.RandRange(minPitch, maxPitch);
+
+		player.Play();
 	}
 }

@@ -3,7 +3,7 @@ using System;
 using System.Globalization;
 using System.Threading.Tasks;
 
-public partial class FPSCounter : Control
+public partial class FPSCounter : CanvasLayer
 {
 	public static FPSCounter Instance { get; set; }
 	
@@ -13,8 +13,8 @@ public partial class FPSCounter : Control
 	
 	public override void _Ready()
 	{
-		if (Enabled) Enable();
-		else Disable();
+		if (Enabled) Toggle(Enabled);
+		else Toggle(Enabled);
 
 		Instance = this;
 		UpdateFPSLoop();
@@ -27,15 +27,17 @@ public partial class FPSCounter : Control
 		UpdateFPSLoop();
 	}
 	
-	public void Enable()
+	public void Toggle(bool enabled)
 	{
-		Visible = true;
-		Enabled = true;
-	}
-
-	public void Disable()
-	{
-		Visible = false;
-		Enabled = false;
+		if (enabled)
+		{
+			Visible = true;
+			Enabled = true;
+		}
+		else
+		{
+			Visible = false;
+			Enabled = false;
+		}
 	}
 }

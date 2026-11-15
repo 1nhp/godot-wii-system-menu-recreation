@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://cno51vuy0h16k"]
+
+[ext_resource type="Script" uid="uid://bof6rri8tnx80" path="res://src/UI/Scenes/SystemSetup06.cs" id="1_obgfa"]
+[ext_resource type="Texture2D" uid="uid://df7gcy4aa5wy6" path="res://Assets/Sprites/Backgrounds/SetupBG2.svg" id="2_550fo"]
+[ext_resource type="Theme" uid="uid://bnky6d6gnqujx" path="res://Data/Themes/SettingsHeader.tres" id="3_ug0lp"]
+[ext_resource type="Theme" uid="uid://bx0rqjc1p5t5b" path="res://Data/Themes/TextGray2.tres" id="4_550fo"]
+[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="4_gt187"]
+[ext_resource type="Theme" uid="uid://b441bir40ui0e" path="res://Data/Themes/Button.tres" id="5_5hup4"]
+[ext_resource type="Script" uid="uid://cdo42w1tganwp" path="res://src/UI/Components/CustomButton.cs" id="6_8klar"]
+[ext_resource type="Texture2D" uid="uid://ckdr1lhii8b5o" path="res://Assets/Sprites/Buttons/ToggleButton.svg" id="7_pvb7e"]
+[ext_resource type="Theme" uid="uid://cslta5wrvd8wo" path="res://Data/Themes/CheckButton.tres" id="10_mfv22"]
+[ext_resource type="Script" uid="uid://dm2mf2juu0drg" path="res://src/UI/Components/CustomOptionButton.cs" id="11_54gsq"]
+
+[node name="SystemSetup06" type="Control" unique_id=371917464 node_paths=PackedStringArray("CursorColorDropdown", "BackButton", "ConfirmButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_obgfa")
+CursorColorDropdown = NodePath("Options/VBoxContainer/CursorColorOption/TextureRect/OptionButton")
+BackButton = NodePath("Back")
+ConfirmButton = NodePath("Confirm")
+SceneAnimation = 1
+TransitionSpeed = 4.0
+TransitionDelay = 0.0
+BackScene = "uid://dbnay2kid3vnm"
+ConfirmScene = "uid://2v5bg8cb2o5q"
+metadata/_edit_horizontal_guides_ = [-192.0]
+
+[node name="BG" type="TextureRect" parent="." unique_id=76137355]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_550fo")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="." unique_id=1571310128]
+custom_maximum_size = Vector2(592, -1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00625
+anchor_top = 0.06111111
+anchor_right = 0.46875
+anchor_bottom = 0.12777779
+theme = ExtResource("3_ug0lp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel" unique_id=1136588193]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 161.0
+offset_bottom = 21.0
+grow_vertical = 2
+theme = ExtResource("4_550fo")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 32
+text = "Appereance"
+
+[node name="Confirm" type="Button" parent="." unique_id=1890019032]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -410.36102
+offset_top = -112.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(195.02777, 48)
+offset_transform_enabled = true
+theme = ExtResource("5_5hup4")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("4_gt187")
+text = "Confirm"
+script = ExtResource("6_8klar")
+metadata/_custom_type_script = "uid://cdo42w1tganwp"
+
+[node name="Options" type="Control" parent="." unique_id=1283910873]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.5
+offset_top = -174.0
+offset_right = 231.5
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options" unique_id=879113385]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.5
+offset_top = -45.25
+offset_right = 240.5
+offset_bottom = 45.25
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(240.5, 45.25)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 82
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CursorColorOption" type="Control" parent="Options/VBoxContainer" unique_id=513879902]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="Options/VBoxContainer/CursorColorOption" unique_id=1431028074]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.5
+offset_top = 7.5
+offset_right = 238.5
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(238.5, 36.75)
+texture = ExtResource("7_pvb7e")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="OptionButton" type="OptionButton" parent="Options/VBoxContainer/CursorColorOption/TextureRect" unique_id=991067987]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -27.5
+offset_right = -16.0
+offset_bottom = 28.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(51, 40)
+offset_transform_enabled = true
+mouse_filter = 1
+theme = ExtResource("10_mfv22")
+icon_alignment = 2
+expand_icon = true
+item_count = 10
+popup/item_0/text = "White"
+popup/item_0/id = 9
+popup/item_1/text = "Red"
+popup/item_1/id = 0
+popup/item_2/text = "Green"
+popup/item_2/id = 1
+popup/item_3/text = "Blue"
+popup/item_3/id = 8
+popup/item_4/text = "Yellow"
+popup/item_4/id = 2
+popup/item_5/text = "Pink"
+popup/item_5/id = 3
+popup/item_6/text = "Black"
+popup/item_6/id = 4
+popup/item_7/text = "Magenta"
+popup/item_7/id = 6
+popup/item_8/text = "Orange"
+popup/item_8/id = 7
+popup/item_9/text = "Cyan"
+popup/item_9/id = 7
+script = ExtResource("11_54gsq")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Name" type="Label" parent="Options/VBoxContainer/CursorColorOption/TextureRect" unique_id=993181439]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -19.5
+offset_right = 248.0
+offset_bottom = 22.5
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("4_550fo")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 27
+text = "Cursor color"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Back" type="Button" parent="." unique_id=1791071433]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -112.0
+offset_right = 410.36102
+offset_bottom = -20.0
+grow_vertical = 0
+pivot_offset = Vector2(195.02777, 48)
+offset_transform_enabled = true
+theme = ExtResource("5_5hup4")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("4_gt187")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+script = ExtResource("6_8klar")
+ClickSound = "ButtonCancel"
+metadata/_custom_type_script = "uid://cdo42w1tganwp"

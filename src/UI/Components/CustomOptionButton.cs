@@ -1,6 +1,7 @@
 using System.Linq;
 using Core.Managers;
 using Godot;
+using WSMR.Utils;
 
 namespace UI.Components;
 
@@ -11,6 +12,7 @@ public partial class CustomOptionButton : OptionButton
 	private PopupAnimator _PopupAnimator;
 
 	[Export] private string ClickSound { get; set; } = "Click";
+	[Export] private string Setting { get; set; } = "SpriteResolutionSelected";
 
 	private PopupMenu _popup;
 	private PanelContainer _PopupContainer;
@@ -31,6 +33,8 @@ public partial class CustomOptionButton : OptionButton
 		_PopupContainer.PivotOffset = _popup.Size / 2;
 		
 		_PopupAnimator = new PopupAnimator(_PopupContainer, _popup);
+		
+		Selected = GetSettingValue.Get<int>(Setting);
 	}
 
 	public override void _ExitTree()
@@ -63,6 +67,7 @@ public partial class CustomOptionButton : OptionButton
 
 	private void OnItemSelected(long id)
 	{
+		SoundManager.Instance.PlaySound("Click");
 		_PopupAnimator.PlayAnim(PopupAnimator.Animations.Out);
 	}
 }

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://buim0sesqhasp"]
+
+[ext_resource type="Script" uid="uid://gbttentqtgql" path="res://src/Core/Managers/MusicManager.cs" id="1_g2nir"]
+[ext_resource type="AudioStream" uid="uid://0xtofxtdrq26" path="res://Assets/Music/WiiTheme.ogg" id="2_g2nir"]
+
+[node name="MusicManager" type="Node2D" unique_id=1483975434]
+script = ExtResource("1_g2nir")
+
+[node name="WiiTheme" type="AudioStreamPlayer" parent="." unique_id=1957363689]
+stream = ExtResource("2_g2nir")
+max_polyphony = 4
+bus = &"Music"

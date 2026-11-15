@@ -1,8 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://7e8ei8rdvfw5"]
 
-[ext_resource type="Texture2D" uid="uid://cu4b4135n0e3f" path="res://Assets/Sprites/Buttons/Button/Button.svg" id="1_4d0nv"]
+[ext_resource type="Texture2D" uid="uid://c1kf7615yg05o" path="res://Assets/Sprites/Buttons/Button.svg" id="1_4d0nv"]
 [ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="1_7xlrp"]
-[ext_resource type="Texture2D" uid="uid://x1ewx3f2cnc8" path="res://Assets/Sprites/Buttons/ButtonOutline/ButtonOutline.svg" id="2_hht4l"]
+[ext_resource type="Texture2D" uid="uid://koo8hov80hj" path="res://Assets/Sprites/Buttons/ButtonOutline.svg" id="2_hht4l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1mj67"]
 texture = ExtResource("1_4d0nv")
@@ -16,7 +16,6 @@ modulate_color = Color(0.16565639, 0.16565642, 0.16565639, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vigk4"]
 texture = ExtResource("2_hht4l")
-region_rect = Rect2(0, 0, 274, 69)
 
 [resource]
 Button/colors/font_color = Color(0.4509804, 0.45490196, 0.45490196, 1)

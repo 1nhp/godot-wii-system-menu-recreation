@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CursorColorData" format=3 uid="uid://cploiiy4h8nr4"]
+
+[ext_resource type="Script" uid="uid://b8s20sx3oor28" path="res://Data/CursorColors/CursorColorData.cs" id="1_fl7nh"]
+
+[sub_resource type="Gradient" id="Gradient_ybh31"]
+colors = PackedColorArray(1, 1, 1, 1, 0.09614866, 0.5627418, 0.99999815, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3gebb"]
+gradient = SubResource("Gradient_ybh31")
+fill_from = Vector2(0.5, 0.6)
+fill_to = Vector2(0.5, 1)
+
+[resource]
+script = ExtResource("1_fl7nh")
+Gradient = SubResource("GradientTexture2D_3gebb")
+ReplacementColor = Color(0, 0, 0, 1)
+TextColor = Color(0, 0.54901963, 1, 1)

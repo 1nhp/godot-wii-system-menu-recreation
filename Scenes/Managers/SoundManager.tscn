@@ -6,8 +6,15 @@
 [ext_resource type="AudioStream" uid="uid://qc4ri46ulr5v" path="res://Assets/SFX/ButtonHover.ogg" id="3_whrjf"]
 [ext_resource type="AudioStream" uid="uid://k443jf4m6grb" path="res://Assets/SFX/ButtonToggled.ogg" id="4_tnyth"]
 [ext_resource type="AudioStream" uid="uid://btnh5o3yi15pi" path="res://Assets/SFX/Click.ogg" id="5_qns2u"]
+[ext_resource type="AudioStream" uid="uid://njlgp4wykrec" path="res://Assets/SFX/PopupMenuOpen.ogg" id="6_u4vlf"]
 [ext_resource type="AudioStream" uid="uid://g4766gejx00e" path="res://Assets/SFX/NotificationOpen.ogg" id="6_yvryh"]
+[ext_resource type="AudioStream" uid="uid://bnmhkr8q6w0rg" path="res://Assets/SFX/PopupMenuClose.ogg" id="7_8hcwa"]
+[ext_resource type="AudioStream" uid="uid://dpw6d8a3lc3x1" path="res://Assets/SFX/PopupBox.ogg" id="8_55mqs"]
 [ext_resource type="AudioStream" uid="uid://chchnaq8qh3fc" path="res://Assets/SFX/KeyboardType.ogg" id="8_gv4pr"]
+[ext_resource type="AudioStream" uid="uid://c2w2rdalo01j1" path="res://Assets/SFX/KeyboardSpace.ogg" id="8_soayk"]
+[ext_resource type="AudioStream" uid="uid://dxpyp5vhgn328" path="res://Assets/SFX/KeyboardCantType.ogg" id="9_hlo8y"]
+[ext_resource type="AudioStream" uid="uid://cnlvm6eyvlrev" path="res://Assets/SFX/Paper.ogg" id="13_7mc56"]
+[ext_resource type="AudioStream" uid="uid://ca3264137awhr" path="res://Assets/SFX/Wrong.ogg" id="14_rvu3w"]
 
 [node name="SoundManager" type="Node2D" unique_id=1483975434]
 script = ExtResource("1_6mkid")
@@ -20,25 +27,64 @@ bus = &"Reverb High"
 [node name="ButtonCancel" type="AudioStreamPlayer" parent="." unique_id=1892865023]
 stream = ExtResource("3_3tmmh")
 max_polyphony = 4
+bus = &"Reverb High"
 
 [node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1863555994]
 stream = ExtResource("3_whrjf")
 max_polyphony = 4
-bus = &"Sounds"
+bus = &"Reverb Low"
 
 [node name="ButtonToggled" type="AudioStreamPlayer" parent="." unique_id=121023662]
 stream = ExtResource("4_tnyth")
 bus = &"Reverb Low"
 
+[node name="PopupMenuOpen" type="AudioStreamPlayer" parent="." unique_id=1095081721]
+stream = ExtResource("6_u4vlf")
+volume_db = -8.587
+bus = &"Reverb Low"
+
+[node name="PopupMenuClose" type="AudioStreamPlayer" parent="." unique_id=455601348]
+stream = ExtResource("7_8hcwa")
+volume_db = -8.587
+bus = &"Reverb High"
+
+[node name="PopupBox" type="AudioStreamPlayer" parent="." unique_id=1435603751]
+stream = ExtResource("8_55mqs")
+volume_db = -8.587
+bus = &"Reverb High"
+
+[node name="KeyboardSpace" type="AudioStreamPlayer" parent="." unique_id=340827969]
+stream = ExtResource("8_soayk")
+volume_db = -11.158
+bus = &"Reverb Low"
+
+[node name="KeyboardCantType" type="AudioStreamPlayer" parent="." unique_id=1281378901]
+stream = ExtResource("9_hlo8y")
+bus = &"Reverb Low"
+
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=1326810732]
 stream = ExtResource("5_qns2u")
-bus = &"Reverb Lowest"
+bus = &"Sounds"
 
 [node name="NotificationOpen" type="AudioStreamPlayer" parent="." unique_id=1685331837]
 stream = ExtResource("6_yvryh")
 volume_db = -3.648
+bus = &"Reverb Low"
 
 [node name="KeyboardType" type="AudioStreamPlayer" parent="." unique_id=1655310707]
 stream = ExtResource("8_gv4pr")
-volume_db = -10.034
-bus = &"Sounds"
+volume_db = -11.859
+max_polyphony = 4
+bus = &"Reverb Low"
+
+[node name="Paper" type="AudioStreamPlayer" parent="." unique_id=368220309]
+stream = ExtResource("13_7mc56")
+volume_db = -11.859
+max_polyphony = 4
+bus = &"Reverb Low"
+
+[node name="Wrong" type="AudioStreamPlayer" parent="." unique_id=1750942736]
+stream = ExtResource("14_rvu3w")
+volume_db = -5.737
+max_polyphony = 4
+bus = &"Reverb Low"

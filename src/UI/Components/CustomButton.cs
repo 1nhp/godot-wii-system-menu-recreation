@@ -1,16 +1,25 @@
 using Core.Managers;
 using Godot;
+using WSMR.Core.Managers;
+using WSMR.UI.Components;
 
 namespace UI.Components;
 
 [GlobalClass]
-public partial class CustomButton : Button
+public partial class CustomButton : PopupButtonHandler
 {
     private ButtonAnimator _animator;
 
     [Export]
-    private string ClickSound { get; set; } = "ButtonDecide";
-
+    public string ClickSound { get; set; } = "ButtonDecide";
+    [Export]
+    public int DebounceDelay = 1;
+    [Export]
+    public bool HasBeenPressed;
+    
+    [Signal]
+    public delegate void ClickedEventHandler();
+    
     public override void _Ready()
     {
         _animator = new ButtonAnimator(this);
@@ -25,12 +34,14 @@ public partial class CustomButton : Button
         MouseEntered -= OnMouseEntered;
         MouseExited -= OnMouseExited;
         Pressed -= OnPressed;
-
         base._ExitTree();
     }
 
     private void OnMouseEntered()
     {
+        if (HasBeenPressed)
+            return;
+        
         SoundManager.Instance.PlaySound("ButtonHover");
         _animator.PlayAnim(ButtonAnimator.Animations.Hover);
     }
@@ -38,11 +49,24 @@ public partial class CustomButton : Button
     private void OnMouseExited()
     {
         _animator.PlayAnim(ButtonAnimator.Animations.HoverOut);
+        base.OnMouseExited();
     }
 
-    private void OnPressed()
+    private async void OnPressed()
     {
+        if (HasBeenPressed)
+            return;
+
+        HasBeenPressed = true;
+        
+        EmitSignal(SignalName.Clicked);
         SoundManager.Instance.PlaySound(ClickSound);
         _animator.PlayAnim(ButtonAnimator.Animations.Click);
+        
+        await ToSignal(
+            GetTree().CreateTimer(DebounceDelay),
+            SceneTreeTimer.SignalName.Timeout
+        );
+        HasBeenPressed = false;
     }
 }

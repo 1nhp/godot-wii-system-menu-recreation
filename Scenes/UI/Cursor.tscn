@@ -2,47 +2,155 @@
 
 [ext_resource type="Script" uid="uid://c1imr0ygrhr4p" path="res://src/UI/Components/Cursor.cs" id="1_0b4wj"]
 [ext_resource type="Shader" uid="uid://dxgqlyyino8la" path="res://src/Shaders/Cursor.gdshader" id="1_2enou"]
-[ext_resource type="Texture2D" uid="uid://8xi33360pxvr" path="res://Assets/Sprites/Cursor/CursorNormalMasked.svg" id="2_1svhy"]
+[ext_resource type="Texture2D" uid="uid://b1iy1lycxgqd4" path="res://Assets/Sprites/Cursor/CursorNormalMasked.svg" id="2_1svhy"]
 [ext_resource type="Shader" uid="uid://b0l0p0gns6b33" path="res://src/Shaders/Blur.gdshader" id="2_iah7b"]
+[ext_resource type="Resource" uid="uid://chw2in715lwwx" path="res://Data/CursorColors/Colors.tres" id="2_lofu2"]
 [ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="3_krj1r"]
-[ext_resource type="Texture2D" uid="uid://dwpumm2qfktk7" path="res://Assets/Sprites/Cursor/CursorGrabbedMasked.svg" id="4_224k7"]
-[ext_resource type="Texture2D" uid="uid://ct4a1ag2fanuo" path="res://Assets/Sprites/Cursor/CursorNormal.svg" id="4_uv853"]
-[ext_resource type="Texture2D" uid="uid://bn3c44xprfld0" path="res://Assets/Sprites/Cursor/CursorGrabbed.svg" id="7_iah7b"]
+[ext_resource type="Texture2D" uid="uid://b0tol8n2e2eu1" path="res://Assets/Sprites/Cursor/CursorGrabbedMasked.svg" id="4_224k7"]
+[ext_resource type="Texture2D" uid="uid://bamphi70y8iqn" path="res://Assets/Sprites/Cursor/CursorNormal.svg" id="6_yy4vv"]
+[ext_resource type="Texture2D" uid="uid://bcpua88qbbro0" path="res://Assets/Sprites/Cursor/CursorGrabbed.svg" id="7_iah7b"]
+[ext_resource type="Texture2D" uid="uid://cnvs1a6qvma88" path="res://Assets/Sprites/Icons/MusicalNote.svg" id="11_3rmu6"]
+[ext_resource type="AnimationNodeBlendSpace1D" uid="uid://cyy0vg1nm517l" path="res://Data/Animations/CursorDanceBlend1D.tres" id="11_dyora"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1svhy"]
 shader = ExtResource("2_iah7b")
 shader_parameter/offset = 4.6370002202575
 shader_parameter/opacity = 0.1650000078375
 
-[sub_resource type="Gradient" id="Gradient_2enou"]
+[sub_resource type="Gradient" id="Gradient_y6xgn"]
 colors = PackedColorArray(1, 1, 1, 1, 0.09614866, 0.5627418, 0.99999815, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2enou"]
-gradient = SubResource("Gradient_2enou")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3rmu6"]
+gradient = SubResource("Gradient_y6xgn")
 fill_from = Vector2(0.5, 0.6)
 fill_to = Vector2(0.5, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2enou"]
 shader = ExtResource("1_2enou")
-shader_parameter/mask_texture = ExtResource("2_1svhy")
-shader_parameter/gradient_texture = SubResource("GradientTexture2D_2enou")
+shader_parameter/gradient_texture = SubResource("GradientTexture2D_3rmu6")
+shader_parameter/gradient_mask = ExtResource("6_yy4vv")
 shader_parameter/my_color = Color(1, 1, 1, 1)
-shader_parameter/invert_mask = true
-shader_parameter/shadow_offset = Vector2(123, 123)
-shader_parameter/shadow_color = Color(0.946533, 2.5027991e-06, 0.57488036, 1)
+shader_parameter/target_color = Color(0, 0, 0, 1)
+shader_parameter/replacement_color = Color(0, 0, 0, 1)
+shader_parameter/tolerance = 1.0
+
+[sub_resource type="Animation" id="Animation_lofu2"]
+resource_name = "Dance"
+length = 3.4666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.57, 0.81, 1.0516773, 1.318344, 1.6216774, 1.8616774, 1.9666667, 2.2666667, 2.5666666, 2.8333333, 3.1543279),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-20, -20), Vector2(0, 0), Vector2(20, -20), Vector2(0, 0), Vector2(-20, -20), Vector2(0, 0), Vector2(20, -20), Vector2(0, 0), Vector2(-48.449, 0), Vector2(0, 0), Vector2(-48.449, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:offset_transform_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.56666666, 0.8333333, 1.0516773, 1.3016773, 1.6183441, 1.8850107, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.2199114857512859, 0.052778758, -0.2792526803190927, 0.0, 0.2199114857512859, 0.052778758, -0.2792526803190927, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.0516773),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_dyora"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:offset_transform_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dyora"]
+_data = {
+&"Dance": SubResource("Animation_lofu2"),
+&"RESET": SubResource("Animation_dyora")
+}
+
+[sub_resource type="Curve" id="Curve_3rmu6"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.41489363, 1.4044943), 0.08449451, 0.08449451, 0, 0, Vector2(0.78723407, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_bfg8b"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.16666667, 0.30246913, 0.46296296, 0.61728394, 0.7345679, 0.8580247, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1, 0.8509804, 1, 0, 1, 0, 0.78431374, 0, 1, 0.9843137, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_c3ucm"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Cursor" type="CanvasLayer" unique_id=1101014926]
 layer = 1300
 
-[node name="Control" type="Control" parent="." unique_id=1096586340 node_paths=PackedStringArray("CursorSprite", "CursorShadowSprite", "CursorGrabbedSprite", "CursorGrabbedShadowSprite")]
+[node name="Control" type="Control" parent="." unique_id=1096586340 node_paths=PackedStringArray("PlayerNumber", "PlayerNumberGrabbed", "CursorSprite", "CursorShadowSprite", "CursorGrabbedSprite", "CursorGrabbedShadowSprite", "DanceAnimation")]
 layout_mode = 3
 anchors_preset = 0
+offset_transform_enabled = true
 mouse_filter = 1
 script = ExtResource("1_0b4wj")
+PlayerNumber = NodePath("Cursor/Label")
+PlayerNumberGrabbed = NodePath("CursorGrabbed/Label")
 CursorSprite = NodePath("Cursor")
 CursorShadowSprite = NodePath("Shadow")
 CursorGrabbedSprite = NodePath("CursorGrabbed")
 CursorGrabbedShadowSprite = NodePath("ShadowGrabbed")
+DanceAnimation = NodePath("../DanceAnim/AnimationTree")
+Colors = ExtResource("2_lofu2")
+Color = "White"
 
 [node name="Shadow" type="TextureRect" parent="Control" unique_id=1896249198]
 material = SubResource("ShaderMaterial_1svhy")
@@ -82,7 +190,7 @@ offset_bottom = 138.8527
 scale = Vector2(0.3345, 0.33450004)
 pivot_offset = Vector2(72.49961, 96.66617)
 mouse_filter = 2
-texture = ExtResource("4_uv853")
+texture = ExtResource("6_yy4vv")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Control/Cursor" unique_id=966447149]
@@ -92,10 +200,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -21.389359
-offset_top = -12.773071
-offset_right = 26.610657
-offset_bottom = 78.22693
+offset_left = -28.389313
+offset_top = -25.6792
+offset_right = 33.610687
+offset_bottom = 91.1333
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.54901963, 1, 1)
@@ -134,3 +242,36 @@ theme_override_colors/font_color = Color(0, 0.54901963, 1, 1)
 theme_override_fonts/font = ExtResource("3_krj1r")
 theme_override_font_sizes/font_size = 89
 text = "1"
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Control" unique_id=1274757609]
+remote_path = NodePath("../../Node2D")
+
+[node name="DanceAnim" type="AnimationPlayer" parent="." unique_id=1347980016]
+libraries/ = SubResource("AnimationLibrary_dyora")
+
+[node name="AnimationTree" type="AnimationTree" parent="DanceAnim" unique_id=1011559140]
+root_node = NodePath("../..")
+tree_root = ExtResource("11_dyora")
+anim_player = NodePath("..")
+parameters/blend_position = -1.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1499973718]
+z_index = -1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D" unique_id=767689573]
+position = Vector2(6, 23)
+emitting = false
+amount = 32
+texture = ExtResource("11_3rmu6")
+lifetime = 3.0
+speed_scale = 1.3
+randomness = 0.64
+emission_shape = 1
+emission_sphere_radius = 63.65
+gravity = Vector2(0, -17.87)
+scale_amount_min = 0.0
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_3rmu6")
+color_ramp = SubResource("Gradient_bfg8b")
+color_initial_ramp = SubResource("Gradient_c3ucm")
+hue_variation_max = 0.97

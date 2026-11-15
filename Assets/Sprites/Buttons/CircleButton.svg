@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 178.975 180.149">
+  <defs>
+    <style>
+      .cls-1{fill:#58b6d7;stroke:#58b6d7;stroke-width:10;stroke-miterlimit:10}
+      .cls-2{fill:#cfced2}
+      .cls-3{fill:url(#radial-gradient-1)}
+      .cls-4{fill:url(#linear-gradient-1)}
+    </style>
+    <clipPath id="clip-path-1">
+      <path d="M5.365 90.687 C5.365 44.172 43.072 6.465 89.587 6.465 C136.101 6.465 173.808 44.172 173.808 90.687 C173.808 137.201 136.101 174.908 89.587 174.908 C43.072 174.908 5.365 137.201 5.365 90.687 Z"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-1" cx="0" cy="0" r="96.41" fx="-9.698" fy="2.359" gradientTransform="matrix(-0.526 -0.851 0.899 -0.555 85.436 63.779)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.6427" stop-color="#e1e1e1" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#b2afaf" stop-opacity="0.52"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient-1" x1="14.273" y1="108.068" x2="113.717" y2="39.588" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e9e9e9"/>
+      <stop offset="0.6436" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+  <title>CircleButton</title>
+  <g id="RefImage">
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <path id="Outline" d="M5.365 90.687 C5.365 44.172 43.072 6.465 89.587 6.465 C136.101 6.465 173.808 44.172 173.808 90.687 C173.808 137.201 136.101 174.908 89.587 174.908 C43.072 174.908 5.365 137.201 5.365 90.687 Z" class="cls-1"/>
+    <path id="Base" d="M5.365 90.687 C5.365 44.172 43.072 6.465 89.587 6.465 C136.101 6.465 173.808 44.172 173.808 90.687 C173.808 137.201 136.101 174.908 89.587 174.908 C43.072 174.908 5.365 137.201 5.365 90.687 Z" class="cls-2"/>
+    <g id="Gradient" data-vc-layer="sublayer" clip-path="url(#clip-path-1)">
+      <path id="Gradient-2" data-name="Gradient" d="M5.365 90.687 C5.365 44.172 43.072 6.465 89.587 6.465 C136.101 6.465 173.808 44.172 173.808 90.687 C173.808 137.201 136.101 174.908 89.587 174.908 C43.072 174.908 5.365 137.201 5.365 90.687 Z" class="cls-3"/>
+    </g>
+    <path id="Bevel" d="M36.631 122.9 L73.234 109.941 C73.234 109.941 130.829 84.023 124.111 50.904 C117.392 17.785 75.154 17.306 75.154 17.306 C75.154 17.306 0.815 48.504 20.014 97.941" class="cls-4"/>
+  </g>
+</svg>

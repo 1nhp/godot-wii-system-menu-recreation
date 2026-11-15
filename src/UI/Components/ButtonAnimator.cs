@@ -2,7 +2,7 @@ using Godot;
 
 namespace UI.Components;
 
-public class ButtonAnimator
+public partial class ButtonAnimator : Node
 {
     private readonly Control _target;
     private readonly Vector2 _buttonScale;
@@ -19,10 +19,12 @@ public class ButtonAnimator
     {
         Hover,
         HoverOut,
-        Click
+        Click,
+        Stretch,
+        StretchOut
     }
 
-    public void PlayAnim(Animations anim)
+    public async void PlayAnim(Animations anim)
     {
         //_tween?.Kill();
 
@@ -43,6 +45,76 @@ public class ButtonAnimator
                 );
                 break;
 
+            case Animations.Stretch:
+                _tween.SetTrans(Tween.TransitionType.Back);
+                _target.OffsetTransformPivot = new Vector2(-30,0);
+                
+                _tween.TweenProperty(
+                    _target,
+                    "offset_transform_scale",
+                    new Vector2(
+                        _buttonScale.X + 0.3f,
+                        _buttonScale.Y
+                    ),
+                    0.1f
+                );
+                
+                _tween.TweenProperty(
+                    _target,
+                    "offset_transform_scale",
+                    new Vector2(
+                        _buttonScale.X +- 0.3f,
+                        _buttonScale.Y
+                    ),
+                    0.06f
+                );
+                
+                _tween.TweenProperty(
+                    _target,
+                    "offset_transform_scale",
+                    _buttonScale,
+                    0.2f
+                );
+                _tween.SetTrans(Tween.TransitionType.Quad);
+                await ToSignal(_tween, Tween.SignalName.Finished);
+                _target.OffsetTransformPivot = Vector2.Zero;
+                break;
+            
+            case Animations.StretchOut:
+                _tween.SetTrans(Tween.TransitionType.Back);
+                _target.OffsetTransformPivot = new Vector2(30,0);
+                
+                _tween.TweenProperty(
+                    _target,
+                    "offset_transform_scale",
+                    new Vector2(
+                        _buttonScale.X + 0.2f,
+                        _buttonScale.Y
+                    ),
+                    0.1f
+                );
+                
+                _tween.TweenProperty(
+                    _target,
+                    "offset_transform_scale",
+                    new Vector2(
+                        _buttonScale.X +- 0.3f,
+                        _buttonScale.Y
+                    ),
+                    0.06f
+                );
+                
+                _tween.TweenProperty(
+                    _target,
+                    "offset_transform_scale",
+                    _buttonScale,
+                    0.2f
+                );
+                _tween.SetTrans(Tween.TransitionType.Quad);
+                await ToSignal(_tween, Tween.SignalName.Finished);
+                _target.OffsetTransformPivot = Vector2.Zero;
+                break;
+            
             case Animations.HoverOut:
                 _tween.TweenProperty(
                     _target,

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CursorColorsDB" format=3 uid="uid://chw2in715lwwx"]
+
+[ext_resource type="Script" uid="uid://b8s20sx3oor28" path="res://Data/CursorColors/CursorColorData.cs" id="1_3ersj"]
+[ext_resource type="Script" uid="uid://cbnmdxqvunsca" path="res://Data/CursorColors/CursorColorsDB.cs" id="1_d053a"]
+[ext_resource type="Resource" uid="uid://bygr2x8ri0l27" path="res://Data/CursorColors/Red.tres" id="1_u275d"]
+[ext_resource type="Resource" uid="uid://dnhpow5qvunxq" path="res://Data/CursorColors/Green.tres" id="2_sh00v"]
+[ext_resource type="Resource" uid="uid://byj2xoyl08ffo" path="res://Data/CursorColors/Yellow.tres" id="3_fcqf2"]
+[ext_resource type="Resource" uid="uid://d14n1vaj2qtfm" path="res://Data/CursorColors/Pink.tres" id="4_ty16x"]
+[ext_resource type="Resource" uid="uid://cploiiy4h8nr4" path="res://Data/CursorColors/White.tres" id="5_daqmx"]
+[ext_resource type="Resource" uid="uid://dcsoe17jubgl2" path="res://Data/CursorColors/Black.tres" id="6_giqfl"]
+[ext_resource type="Resource" uid="uid://ccwp86utpy5uf" path="res://Data/CursorColors/Magenta.tres" id="7_6oafq"]
+[ext_resource type="Resource" uid="uid://d3gooa7ikopfb" path="res://Data/CursorColors/Orange.tres" id="8_ge76c"]
+[ext_resource type="Resource" uid="uid://vb012fbcksdx" path="res://Data/CursorColors/Cyan.tres" id="10_605xy"]
+[ext_resource type="Resource" uid="uid://bakrsgknpahcu" path="res://Data/CursorColors/Blue.tres" id="11_07k2c"]
+
+[resource]
+script = ExtResource("1_d053a")
+ColorsDatabase = Dictionary[String, ExtResource("1_3ersj")]({
+"Black": ExtResource("6_giqfl"),
+"Blue": ExtResource("11_07k2c"),
+"Cyan": ExtResource("10_605xy"),
+"Green": ExtResource("2_sh00v"),
+"Magenta": ExtResource("7_6oafq"),
+"Orange": ExtResource("8_ge76c"),
+"Pink": ExtResource("4_ty16x"),
+"Red": ExtResource("1_u275d"),
+"White": ExtResource("5_daqmx"),
+"Yellow": ExtResource("3_fcqf2")
+})

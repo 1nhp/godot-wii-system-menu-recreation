@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cd2ls8houwwfx"]
 
-[ext_resource type="Texture2D" uid="uid://j3a3iilo1pom" path="res://Assets/Sprites/Setup/SelectionHighLight/SelectionHighLight.svg" id="1_37n5d"]
+[ext_resource type="Texture2D" uid="uid://bvv6sajo27m6m" path="res://Assets/Sprites/SelectionHighLight.svg" id="1_37n5d"]
 [ext_resource type="Script" uid="uid://b2nkwfciahrqx" path="res://src/UI/Components/SelectionHighlight.cs" id="1_l60qq"]
 
 [sub_resource type="Animation" id="Animation_37n5d"]

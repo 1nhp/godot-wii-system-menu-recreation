@@ -1,0 +1,724 @@
+[gd_scene format=3 uid="uid://dtccr4fh1gyon"]
+
+[ext_resource type="Script" uid="uid://be7r6cpov4bwb" path="res://src/UI/Scenes/SystemMenu.cs" id="1_0fbp6"]
+[ext_resource type="Theme" uid="uid://bx0rqjc1p5t5b" path="res://Data/Themes/TextGray2.tres" id="1_mtrkr"]
+[ext_resource type="Texture2D" uid="uid://df8tfk2hfick" path="res://Assets/Sprites/SystemMenu/SystemMenuBG.svg" id="2_vo4q0"]
+[ext_resource type="Texture2D" uid="uid://dur0lccph8cfk" path="res://Assets/Sprites/SystemMenu/BottomLayout_Mask.png" id="3_qroc0"]
+[ext_resource type="Texture2D" uid="uid://bq18pq0x6yo2o" path="res://Assets/Sprites/ReferenceImages/Screenshot_20260812_135447.png" id="4_0m0wp"]
+[ext_resource type="Theme" uid="uid://tyv6axn4j1tc" path="res://Data/Themes/CircleButton.tres" id="6_wc5hv"]
+[ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="7_wc5hv"]
+[ext_resource type="Script" uid="uid://cdo42w1tganwp" path="res://src/UI/Components/CustomButton.cs" id="8_s8ik8"]
+[ext_resource type="Script" uid="uid://cng03e0288wlv" path="res://src/UI/Components/ChannelButton.cs" id="8_tgqo7"]
+[ext_resource type="Texture2D" uid="uid://c51ris8i31wvo" path="res://Assets/Sprites/Icons/WiiLogo.svg" id="8_wc5hv"]
+[ext_resource type="Texture2D" uid="uid://cna7ce3q53w3d" path="res://Assets/Sprites/SystemMenu/ChannelOutlineMask.svg" id="9_xmc1j"]
+[ext_resource type="Texture2D" uid="uid://cme6g4xg1ceub" path="res://Assets/Sprites/Buttons/CircleButton.svg" id="10_s8ik8"]
+[ext_resource type="Texture2D" uid="uid://b2p18wnmp1u4f" path="res://Assets/Sprites/SystemMenu/BottomBGHolder.svg" id="11_ekyxc"]
+[ext_resource type="Texture2D" uid="uid://8us244nclpgn" path="res://Assets/Sprites/Icons/WiiMail.svg" id="12_6qwiw"]
+[ext_resource type="Texture2D" uid="uid://d00mcpwta2ari" path="res://Assets/Sprites/SystemMenu/BottomLayout_Outline.svg" id="13_qroc0"]
+[ext_resource type="Shader" uid="uid://bxbob0nv51eaq" path="res://src/Shaders/BottomLayout_Mask.gdshader" id="15_qroc0"]
+[ext_resource type="Texture2D" uid="uid://dsrb330b1k8md" path="res://Assets/Sprites/SystemMenu/SystemMenuBG2.svg" id="16_qroc0"]
+[ext_resource type="Script" uid="uid://c7se48qvur123" path="res://src/UI/Widgets/Clock.cs" id="17_nmh87"]
+[ext_resource type="FontFile" uid="uid://dmvpretuujspn" path="res://Assets/Fonts/Digital-7.ttf" id="17_rvotc"]
+[ext_resource type="Theme" uid="uid://chjaroiurlmde" path="res://Data/Themes/ChannelButton.tres" id="18_nmh87"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgqo7"]
+shader = ExtResource("15_qroc0")
+shader_parameter/mask_texture = ExtResource("3_qroc0")
+shader_parameter/invert = true
+
+[sub_resource type="Animation" id="Animation_qroc0"]
+resource_name = "BoardOpen"
+length = 0.53333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BottomLayout:transform")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.43333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, -700)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Channels:offset")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667, 0.43333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -700)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightButtons:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666667, 0.43333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.141592653589793]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftButtons:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.06666667, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.141592653589793]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightButtons/HolderRight2/WiiMenuButton:_hasBeenPressed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4875001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_rvotc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BottomLayout:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Transform2D(1, 0, 0, 1, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Channels:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightButtons:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftButtons:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightButtons/HolderRight2/WiiMenuButton:_hasBeenPressed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvotc"]
+_data = {
+&"BoardOpen": SubResource("Animation_qroc0"),
+&"RESET": SubResource("Animation_rvotc")
+}
+
+[node name="SystemMenu" type="Control" unique_id=472227920 node_paths=PackedStringArray("_BoardButton", "_WiiMenuButton", "_animPlayer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbp6")
+_BoardButton = NodePath("RightButtons/HolderRight/WiiBoardButton")
+_WiiMenuButton = NodePath("RightButtons/HolderRight2/WiiMenuButton")
+_animPlayer = NodePath("AnimationPlayer")
+
+[node name="Channels" type="CanvasLayer" parent="." unique_id=1098928144]
+layer = 0
+
+[node name="InfoText" type="Label" parent="Channels" unique_id=1341405738]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -551.5
+offset_top = -42.65625
+offset_right = 551.5
+offset_bottom = 42.65625
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mtrkr")
+theme_override_font_sizes/font_size = 65
+text = "SCREEN NOT IMPLEMENTED YET"
+horizontal_alignment = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="Channels" unique_id=919107161]
+visible = false
+texture = ExtResource("2_vo4q0")
+polygon = PackedVector2Array(0, 523, 239, 522, 283, 529, 336, 552, 416, 592, 491, 619, 528, 618, 638.6669, 616, 768, 616, 803, 610, 845, 595, 890, 576, 936, 552, 970, 535, 1013, 521, 1280, 520, 1280, 0, 0, 0)
+
+[node name="BG" type="TextureRect" parent="Channels" unique_id=1200167438]
+z_index = -1
+material = SubResource("ShaderMaterial_tgqo7")
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -720.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("2_vo4q0")
+expand_mode = 1
+
+[node name="BG1_Top" type="TextureRect" parent="Channels" unique_id=666405654]
+z_index = -1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1672.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_vo4q0")
+expand_mode = 1
+
+[node name="Time" type="RichTextLabel" parent="Channels" unique_id=2107879419]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = -162.8125
+offset_right = 115.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme = ExtResource("1_mtrkr")
+theme_override_colors/default_color = Color(0.60784316, 0.60784316, 0.60784316, 1)
+theme_override_fonts/normal_font = ExtResource("17_rvotc")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "8 17 PM"
+horizontal_alignment = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TimeDot" type="RichTextLabel" parent="Channels" unique_id=82093478]
+clip_contents = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.5
+offset_top = -165.8125
+offset_right = 0.5
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+mouse_filter = 1
+theme = ExtResource("1_mtrkr")
+theme_override_colors/default_color = Color(0.60784316, 0.60784316, 0.60784316, 1)
+theme_override_fonts/normal_font = ExtResource("17_rvotc")
+theme_override_font_sizes/normal_font_size = 83
+bbcode_enabled = true
+text = "[pulse freq=2 color=#ffffff00]:[/pulse]"
+autowrap_mode = 0
+horizontal_alignment = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BoxContainer" type="GridContainer" parent="Channels" unique_id=1162491057]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -536.5
+offset_top = -344.0
+offset_right = 536.5
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 11
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="ChannelButton" type="Button" parent="Channels/BoxContainer" unique_id=1671550694]
+custom_minimum_size = Vector2(260, 140)
+custom_maximum_size = Vector2(260, 140)
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("18_nmh87")
+script = ExtResource("8_tgqo7")
+ClickSound = "Click"
+_popupOffset = Vector2(-30, -140)
+ShowPopup = true
+
+[node name="TextureRect" type="TextureRect" parent="Channels/BoxContainer/ChannelButton" unique_id=552936575]
+clip_children = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 0.5
+offset_right = 259.02747
+offset_bottom = 139.28418
+pivot_offset = Vector2(130.5, 72)
+mouse_filter = 2
+texture = ExtResource("9_xmc1j")
+expand_mode = 1
+
+[node name="Screenshot20260812135447" type="Sprite2D" parent="Channels" unique_id=1542231769]
+visible = false
+modulate = Color(1, 1, 1, 0.4117647)
+position = Vector2(640, 360.00003)
+scale = Vector2(0.69830877, 0.7192807)
+texture = ExtResource("4_0m0wp")
+
+[node name="BottomLayout" type="CanvasLayer" parent="." unique_id=1223278689]
+layer = 0
+
+[node name="BottomLayoutMask" type="TextureRect" parent="BottomLayout" unique_id=686086060]
+visible = false
+clip_children = 2
+clip_contents = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.228
+offset_bottom = 3.7071533
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1, 0.999)
+pivot_offset = Vector2(630, 228.00488)
+mouse_filter = 2
+texture = ExtResource("3_qroc0")
+
+[node name="BG2" type="TextureRect" parent="BottomLayout/BottomLayoutMask" unique_id=971432063]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.244232
+offset_bottom = 9.1552734e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_qroc0")
+expand_mode = 3
+
+[node name="Bar" type="HBoxContainer" parent="BottomLayout" unique_id=1117346616]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.5
+offset_top = -200.0
+offset_right = 6.5
+offset_bottom = 48.000977
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = -7
+
+[node name="LayoutOutlineLeft" type="TextureRect" parent="BottomLayout/Bar" unique_id=1406708451]
+modulate = Color(0.34509805, 0.7137255, 0.84313726, 1)
+z_index = 1
+custom_minimum_size = Vector2(639.71, 0)
+custom_maximum_size = Vector2(-1, 100.525)
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_position = Vector2(4.05, 0)
+mouse_filter = 2
+texture = ExtResource("13_qroc0")
+expand_mode = 1
+flip_h = true
+flip_v = true
+
+[node name="LayoutOutlineRight" type="TextureRect" parent="BottomLayout/Bar" unique_id=1748250263]
+modulate = Color(0.34509805, 0.7137255, 0.84313726, 1)
+z_index = 1
+custom_minimum_size = Vector2(660, 0)
+custom_maximum_size = Vector2(-1, 100.525)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+texture = ExtResource("13_qroc0")
+expand_mode = 1
+flip_v = true
+
+[node name="Board" type="CanvasLayer" parent="." unique_id=457056322]
+layer = -1
+
+[node name="BG2" type="TextureRect" parent="Board" unique_id=1890406928]
+visibility_layer = 512
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_qroc0")
+expand_mode = 3
+
+[node name="Date" type="Label" parent="Board" unique_id=2141419932]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = 264.0
+offset_right = 66.5
+offset_bottom = 338.8125
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_mtrkr")
+theme_override_colors/font_color = Color(0.4862745, 0.49019608, 0.49019608, 1)
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 42
+text = "Date"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1287828994]
+libraries/ = SubResource("AnimationLibrary_rvotc")
+
+[node name="Clock" type="Control" parent="." unique_id=226692674 node_paths=PackedStringArray("DateLabel", "TimeLabel")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_nmh87")
+DateLabel = NodePath("../Board/Date")
+TimeLabel = NodePath("../Channels/Time")
+
+[node name="RightButtons" type="Control" parent="." unique_id=1527786549]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -184.0
+offset_right = 48.0
+offset_bottom = -144.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(-8, 80)
+
+[node name="HolderRight" type="TextureRect" parent="RightButtons" unique_id=441503352]
+self_modulate = Color(1, 1, 1, 0.32941177)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -239.0
+offset_top = -40.0
+offset_right = -47.0
+offset_bottom = 120.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(192, 80)
+mouse_filter = 2
+texture = ExtResource("11_ekyxc")
+expand_mode = 1
+flip_h = true
+
+[node name="WiiBoardButton" type="Button" parent="RightButtons/HolderRight" unique_id=755857906]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -133.0
+offset_right = -56.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(60, 60)
+offset_transform_enabled = true
+theme = ExtResource("6_wc5hv")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_constants/icon_max_width = 64
+theme_override_fonts/font = ExtResource("7_wc5hv")
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("12_6qwiw")
+icon_alignment = 1
+script = ExtResource("8_s8ik8")
+_popupOffset = Vector2(30, 70)
+PopupText = "Wii Board"
+ShowPopup = true
+metadata/_custom_type_script = "uid://cdo42w1tganwp"
+
+[node name="WiiMailButtonShadow" type="TextureRect" parent="RightButtons/HolderRight/WiiBoardButton" unique_id=1645587489]
+modulate = Color(0.011764706, 0.011764706, 0.011764706, 0.1254902)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 12.0
+offset_right = 125.0
+offset_bottom = 125.71509
+texture = ExtResource("10_s8ik8")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="RightButtons/HolderRight" unique_id=277831572]
+modulate = Color(0, 0, 0, 0.12156863)
+show_behind_parent = true
+layout_mode = 0
+offset_top = 6.0
+offset_right = 197.0
+offset_bottom = 166.0
+mouse_filter = 2
+texture = ExtResource("11_ekyxc")
+expand_mode = 1
+flip_h = true
+
+[node name="HolderRight2" type="TextureRect" parent="RightButtons" unique_id=843969350]
+self_modulate = Color(1, 1, 1, 0.32941177)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -40.0
+offset_right = 190.0
+offset_bottom = 120.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 80)
+mouse_filter = 2
+texture = ExtResource("11_ekyxc")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="RightButtons/HolderRight2" unique_id=1849009579]
+modulate = Color(0, 0, 0, 0.12156863)
+show_behind_parent = true
+layout_mode = 0
+offset_top = 6.0
+offset_right = 197.0
+offset_bottom = 166.0
+mouse_filter = 2
+texture = ExtResource("11_ekyxc")
+expand_mode = 1
+
+[node name="WiiMenuButton" type="Button" parent="RightButtons/HolderRight2" unique_id=522280432]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = -133.0
+offset_right = 171.0
+offset_bottom = -13.0
+grow_vertical = 0
+rotation = 3.1415927
+pivot_offset = Vector2(60, 60)
+offset_transform_enabled = true
+theme = ExtResource("6_wc5hv")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_constants/icon_max_width = 51
+theme_override_fonts/font = ExtResource("7_wc5hv")
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("8_wc5hv")
+icon_alignment = 1
+script = ExtResource("8_s8ik8")
+ClickSound = "ButtonCancel"
+metadata/_custom_type_script = "uid://cdo42w1tganwp"
+
+[node name="WiiButtonShadow" type="TextureRect" parent="RightButtons/HolderRight2/WiiMenuButton" unique_id=537712908]
+modulate = Color(0.011764706, 0.011764706, 0.011764706, 0.1254902)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 12.0
+offset_right = 123.0
+offset_bottom = 125.71509
+texture = ExtResource("10_s8ik8")
+expand_mode = 1
+
+[node name="LeftButtons" type="Control" parent="." unique_id=556781430]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 8.0
+grow_vertical = 0
+pivot_offset = Vector2(0, -69)
+
+[node name="HolderLeft" type="TextureRect" parent="LeftButtons" unique_id=1338835261]
+self_modulate = Color(1, 1, 1, 0.32941177)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -192.0
+offset_right = 192.0
+offset_bottom = -32.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 80)
+mouse_filter = 2
+texture = ExtResource("11_ekyxc")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="LeftButtons/HolderLeft" unique_id=939973181]
+modulate = Color(0, 0, 0, 0.12156863)
+show_behind_parent = true
+layout_mode = 0
+offset_top = 6.0
+offset_right = 197.0
+offset_bottom = 166.0
+mouse_filter = 2
+texture = ExtResource("11_ekyxc")
+expand_mode = 1
+
+[node name="WiiButton" type="Button" parent="LeftButtons/HolderLeft" unique_id=1125277206]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = -141.0
+offset_right = 171.0
+offset_bottom = -21.0
+grow_vertical = 0
+pivot_offset = Vector2(60, 60)
+offset_transform_enabled = true
+theme = ExtResource("6_wc5hv")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_constants/icon_max_width = 51
+theme_override_fonts/font = ExtResource("7_wc5hv")
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("8_wc5hv")
+icon_alignment = 1
+script = ExtResource("8_s8ik8")
+_popupOffset = Vector2(40, 70)
+PopupText = "Wii Settings"
+ShowPopup = true
+metadata/_custom_type_script = "uid://cdo42w1tganwp"
+
+[node name="WiiButtonShadow" type="TextureRect" parent="LeftButtons/HolderLeft/WiiButton" unique_id=1485494512]
+modulate = Color(0.011764706, 0.011764706, 0.011764706, 0.1254902)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 12.0
+offset_right = 123.0
+offset_bottom = 125.71509
+texture = ExtResource("10_s8ik8")
+expand_mode = 1
+
+[node name="HolderLeft2" type="TextureRect" parent="LeftButtons" unique_id=1737926049]
+self_modulate = Color(1, 1, 1, 0.32941177)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -4.2308413e-05
+offset_top = -199.72632
+offset_right = 191.99995
+offset_bottom = -39.72632
+grow_vertical = 0
+rotation = -3.1415927
+pivot_offset = Vector2(2.5493053e-05, 88.36316)
+mouse_filter = 2
+texture = ExtResource("11_ekyxc")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="LeftButtons/HolderLeft2" unique_id=1936107054]
+modulate = Color(0, 0, 0, 0.12156863)
+show_behind_parent = true
+layout_mode = 0
+offset_top = 6.0
+offset_right = 197.0
+offset_bottom = 166.0
+mouse_filter = 2
+texture = ExtResource("11_ekyxc")
+expand_mode = 1
+
+[node name="WiiButton" type="Button" parent="LeftButtons/HolderLeft2" unique_id=2014988128]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = -133.0
+offset_right = 171.0
+offset_bottom = -13.0
+grow_vertical = 0
+pivot_offset = Vector2(60, 60)
+offset_transform_enabled = true
+theme = ExtResource("6_wc5hv")
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_constants/icon_max_width = 51
+theme_override_fonts/font = ExtResource("7_wc5hv")
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("8_wc5hv")
+icon_alignment = 1
+script = ExtResource("8_s8ik8")
+metadata/_custom_type_script = "uid://cdo42w1tganwp"
+
+[node name="WiiButtonShadow" type="TextureRect" parent="LeftButtons/HolderLeft2/WiiButton" unique_id=932303130]
+modulate = Color(0.011764706, 0.011764706, 0.011764706, 0.1254902)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 12.0
+offset_right = 123.0
+offset_bottom = 125.71509
+texture = ExtResource("10_s8ik8")
+expand_mode = 1

@@ -76,8 +76,8 @@ public partial class Notification : Control
 	{
 		_NotificationContainer.SetMouseBehaviorRecursive(MouseBehaviorRecursiveEnum.Disabled);
 		await ToSignal(GetTree().CreateTimer(0.2), SceneTreeTimer.SignalName.Timeout);
-		SignalBus.Instance.EmitSignal(SignalBus.SignalName.NotificationFinished, response);
 		_animPlayer.PlayBackwards(CloseAnimationName);
-		Closing = true;
+		await ToSignal(GetTree().CreateTimer(0.5), SceneTreeTimer.SignalName.Timeout);
+		SignalBus.Instance.EmitSignal(SignalBus.SignalName.NotificationFinished, response); QueueFree();
 	}
 }

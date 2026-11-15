@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://da2b7ufkiujxh"]
 
 [ext_resource type="Script" uid="uid://bo865gq16lwyr" path="res://src/UI/Scenes/SystemSetup02.cs" id="1_xph5y"]
-[ext_resource type="Texture2D" uid="uid://bvmbxrecqh3v" path="res://Assets/Sprites/Setup/SetupBG.svg" id="2_c8y66"]
+[ext_resource type="Texture2D" uid="uid://cpw6cp3ba5yd8" path="res://Assets/Sprites/Backgrounds/SetupBG.svg" id="2_c8y66"]
+[ext_resource type="Theme" uid="uid://c0eh16o87mhu3" path="res://Data/Themes/TextGray.tres" id="3_s2yix"]
 [ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="4_mai4m"]
 
 [node name="SystemSetup02" type="Control" unique_id=371917464]
@@ -36,6 +37,7 @@ offset_right = 378.0
 offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_s2yix")
 theme_override_colors/font_color = Color(0.4627451, 0.47058824, 0.4627451, 1)
 theme_override_constants/line_spacing = 27
 theme_override_fonts/font = ExtResource("4_mai4m")
