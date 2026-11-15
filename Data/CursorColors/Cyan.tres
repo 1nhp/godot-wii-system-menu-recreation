@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CursorColorData" format=3 uid="uid://vb012fbcksdx"]
+[gd_resource type="Resource" format=3 uid="uid://vb012fbcksdx"]
 
 [ext_resource type="Script" uid="uid://b8s20sx3oor28" path="res://Data/CursorColors/CursorColorData.cs" id="1_kf522"]
 
