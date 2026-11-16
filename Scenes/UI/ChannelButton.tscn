@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cn5valwg20hpm"]
+
+[ext_resource type="Theme" uid="uid://chjaroiurlmde" path="res://Data/Themes/ChannelButton.tres" id="1_24ynk"]
+[ext_resource type="Script" uid="uid://cng03e0288wlv" path="res://src/UI/Components/ChannelButton.cs" id="2_j8abg"]
+[ext_resource type="Texture2D" uid="uid://cna7ce3q53w3d" path="res://Assets/Sprites/SystemMenu/ChannelOutlineMask.svg" id="3_0kwix"]
+
+[node name="ChannelButton" type="Button" unique_id=1808544510]
+custom_minimum_size = Vector2(260, 140)
+custom_maximum_size = Vector2(260, 140)
+offset_right = 260.0
+offset_bottom = 140.0
+offset_transform_enabled = true
+theme = ExtResource("1_24ynk")
+script = ExtResource("2_j8abg")
+ClickSound = "Click"
+_popupOffset = Vector2(-30, -140)
+ShowPopup = true
+metadata/_custom_type_script = "uid://cng03e0288wlv"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=350292228]
+clip_children = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 0.5
+offset_right = 259.02747
+offset_bottom = 139.28418
+pivot_offset = Vector2(130.5, 72)
+mouse_filter = 2
+texture = ExtResource("3_0kwix")
+expand_mode = 1

@@ -8,9 +8,7 @@
 [ext_resource type="Theme" uid="uid://tyv6axn4j1tc" path="res://Data/Themes/CircleButton.tres" id="6_wc5hv"]
 [ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="7_wc5hv"]
 [ext_resource type="Script" uid="uid://cdo42w1tganwp" path="res://src/UI/Components/CustomButton.cs" id="8_s8ik8"]
-[ext_resource type="Script" uid="uid://cng03e0288wlv" path="res://src/UI/Components/ChannelButton.cs" id="8_tgqo7"]
 [ext_resource type="Texture2D" uid="uid://c51ris8i31wvo" path="res://Assets/Sprites/Icons/WiiLogo.svg" id="8_wc5hv"]
-[ext_resource type="Texture2D" uid="uid://cna7ce3q53w3d" path="res://Assets/Sprites/SystemMenu/ChannelOutlineMask.svg" id="9_xmc1j"]
 [ext_resource type="Texture2D" uid="uid://cme6g4xg1ceub" path="res://Assets/Sprites/Buttons/CircleButton.svg" id="10_s8ik8"]
 [ext_resource type="Texture2D" uid="uid://b2p18wnmp1u4f" path="res://Assets/Sprites/SystemMenu/BottomBGHolder.svg" id="11_ekyxc"]
 [ext_resource type="Texture2D" uid="uid://8us244nclpgn" path="res://Assets/Sprites/Icons/WiiMail.svg" id="12_6qwiw"]
@@ -19,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dsrb330b1k8md" path="res://Assets/Sprites/SystemMenu/SystemMenuBG2.svg" id="16_qroc0"]
 [ext_resource type="Script" uid="uid://c7se48qvur123" path="res://src/UI/Widgets/Clock.cs" id="17_nmh87"]
 [ext_resource type="FontFile" uid="uid://dmvpretuujspn" path="res://Assets/Fonts/Digital-7.ttf" id="17_rvotc"]
-[ext_resource type="Theme" uid="uid://chjaroiurlmde" path="res://Data/Themes/ChannelButton.tres" id="18_nmh87"]
+[ext_resource type="Script" uid="uid://dt3ho2phlym7d" path="res://src/Core/Handlers/ChannelHandler.cs" id="21_x4cv8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tgqo7"]
 shader = ExtResource("15_qroc0")
@@ -272,7 +270,7 @@ autowrap_mode = 0
 horizontal_alignment = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BoxContainer" type="GridContainer" parent="Channels" unique_id=1162491057]
+[node name="ChannelGrid" type="GridContainer" parent="Channels" unique_id=1162491057]
 z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -288,29 +286,6 @@ grow_vertical = 2
 theme_override_constants/h_separation = 11
 theme_override_constants/v_separation = 15
 columns = 4
-
-[node name="ChannelButton" type="Button" parent="Channels/BoxContainer" unique_id=1671550694]
-custom_minimum_size = Vector2(260, 140)
-custom_maximum_size = Vector2(260, 140)
-layout_mode = 2
-offset_transform_enabled = true
-theme = ExtResource("18_nmh87")
-script = ExtResource("8_tgqo7")
-ClickSound = "Click"
-_popupOffset = Vector2(-30, -140)
-ShowPopup = true
-
-[node name="TextureRect" type="TextureRect" parent="Channels/BoxContainer/ChannelButton" unique_id=552936575]
-clip_children = 2
-clip_contents = true
-layout_mode = 0
-offset_left = 0.5
-offset_right = 259.02747
-offset_bottom = 139.28418
-pivot_offset = Vector2(130.5, 72)
-mouse_filter = 2
-texture = ExtResource("9_xmc1j")
-expand_mode = 1
 
 [node name="Screenshot20260812135447" type="Sprite2D" parent="Channels" unique_id=1542231769]
 visible = false
@@ -722,3 +697,7 @@ offset_right = 123.0
 offset_bottom = 125.71509
 texture = ExtResource("10_s8ik8")
 expand_mode = 1
+
+[node name="ChannelHandler" type="Node" parent="." unique_id=1945071579 node_paths=PackedStringArray("ChannelGrid")]
+script = ExtResource("21_x4cv8")
+ChannelGrid = NodePath("../Channels/ChannelGrid")

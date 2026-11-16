@@ -6,18 +6,18 @@ namespace WSMR.UI.Components;
 public partial class PopupButtonHandler : Button
 {
     [Export] private Vector2 _popupOffset;
-    private int _hoverTime = 0;
-    [Export] public int PopupDelay = 15;
+    private double _hoverTime = 0;
+    [Export] public float PopupDelay = 0.2f;
     [Export] public string PopupText = "TEST";
     [Export] public bool ShowPopup;
-    
+
     public override void _Process(double delta)
     {
         if (IsHovered() && ShowPopup)
         {
             if (_hoverTime < PopupDelay)
             {
-                _hoverTime += 1;
+                _hoverTime += 1 * delta;
                 GD.Print(_hoverTime);
             }
             else

@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_gt5kf")
 Object = Dictionary[String, String]({
+"ChannelButton": "res://Scenes/UI/ChannelButton.tscn",
 "ChannelHover": "res://Scenes/Effects/ChannelHover.tscn",
 "Notification": "res://Scenes/UI/Notification.tscn",
 "Popup": "res://Scenes/UI/Popup.tscn"
