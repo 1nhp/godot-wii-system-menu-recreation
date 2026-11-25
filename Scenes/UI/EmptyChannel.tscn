@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://cuhnsf4bba2m2"]
+
+[ext_resource type="Theme" uid="uid://chjaroiurlmde" path="res://Data/Themes/ChannelButton.tres" id="1_a0mge"]
+[ext_resource type="Texture2D" uid="uid://cna7ce3q53w3d" path="res://Assets/Sprites/SystemMenu/ChannelOutlineMask.svg" id="3_4rmi6"]
+[ext_resource type="Texture2D" uid="uid://c51ris8i31wvo" path="res://Assets/Sprites/Icons/WiiLogo.svg" id="4_0i6d6"]
+[ext_resource type="Texture2D" uid="uid://wuehhleypg0t" path="res://Assets/Sprites/Scanline.svg" id="5_4rmi6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4rmi6"]
+noise_type = 5
+frequency = 0.5947
+fractal_type = 0
+fractal_octaves = 1
+fractal_lacunarity = 0.0
+fractal_gain = 0.0
+fractal_ping_pong_strength = 39.175
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0i6d6"]
+noise = SubResource("FastNoiseLite_4rmi6")
+
+[sub_resource type="Animation" id="Animation_4rmi6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mask/Noise:texture:noise:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mask/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128.5, 52.122536)]
+}
+
+[sub_resource type="Animation" id="Animation_0i6d6"]
+resource_name = "new_animation"
+length = 1.0333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mask/Noise:texture:noise:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333333, 0.06666666, 0.09839866, 0.13333334, 0.16666667, 0.2, 0.2254224, 0.25404745, 0.28738078, 0.32071412, 0.3524461, 0.38738078, 0.42071414, 0.45404744, 0.47946984, 0.5027277, 0.53606105, 0.56939435, 0.6011264, 0.636061, 0.6693944, 0.7027277, 0.72815007, 0.7549861, 0.78831947, 0.82165277, 0.8533848, 0.88831943, 0.9216528, 0.9549861, 0.9804085, 1.0090336, 1.0423669, 1.0757003, 1.1074322, 1.1423669, 1.1757002, 1.2090335, 1.234456, 1.2577138, 1.2910471, 1.3243804, 1.3561125, 1.3910471, 1.4243805, 1.4577138, 1.4831362),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(0, 0, 0), Vector3(50, 0, 0), Vector3(132.53, 283.01, 180.72), Vector3(403.2, 198.67, 409.64), Vector3(-428.13, -704.94, -446.78), Vector3(-409.64, 554.22, 674.7), Vector3(-30.54, -331.45, -25.09), Vector3(342.95, 42.04, 227.92), Vector3(0, 0, 0), Vector3(50, 0, 0), Vector3(132.53, 283.01, 180.72), Vector3(403.2, 198.67, 409.64), Vector3(-428.13, -704.94, -446.78), Vector3(-409.64, 554.22, 674.7), Vector3(-30.54, -331.45, -25.09), Vector3(342.95, 42.04, 227.92), Vector3(0, 0, 0), Vector3(50, 0, 0), Vector3(132.53, 283.01, 180.72), Vector3(403.2, 198.67, 409.64), Vector3(-428.13, -704.94, -446.78), Vector3(-409.64, 554.22, 674.7), Vector3(-30.54, -331.45, -25.09), Vector3(342.95, 42.04, 227.92), Vector3(0, 0, 0), Vector3(50, 0, 0), Vector3(132.53, 283.01, 180.72), Vector3(403.2, 198.67, 409.64), Vector3(-428.13, -704.94, -446.78), Vector3(-409.64, 554.22, 674.7), Vector3(-30.54, -331.45, -25.09), Vector3(342.95, 42.04, 227.92), Vector3(0, 0, 0), Vector3(50, 0, 0), Vector3(132.53, 283.01, 180.72), Vector3(403.2, 198.67, 409.64), Vector3(-428.13, -704.94, -446.78), Vector3(-409.64, 554.22, 674.7), Vector3(-30.54, -331.45, -25.09), Vector3(342.95, 42.04, 227.92), Vector3(0, 0, 0), Vector3(50, 0, 0), Vector3(132.53, 283.01, 180.72), Vector3(403.2, 198.67, 409.64), Vector3(-428.13, -704.94, -446.78), Vector3(-409.64, 554.22, 674.7), Vector3(-30.54, -331.45, -25.09), Vector3(342.95, 42.04, 227.92)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mask/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(128.5, 52.122536), Vector2(128.5, 9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4rmi6"]
+_data = {
+&"RESET": SubResource("Animation_4rmi6"),
+&"new_animation": SubResource("Animation_0i6d6")
+}
+
+[node name="EmptyChannel" type="Button" unique_id=953266128]
+custom_minimum_size = Vector2(260, 140)
+custom_maximum_size = Vector2(260, 140)
+offset_right = 260.0
+offset_bottom = 140.0
+offset_transform_enabled = true
+theme = ExtResource("1_a0mge")
+
+[node name="Mask" type="TextureRect" parent="." unique_id=1313454691]
+self_modulate = Color(0.94369775, 0.9436977, 0.94369763, 1)
+clip_children = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.3931065
+offset_right = 258.15848
+offset_bottom = 134.69234
+pivot_offset = Vector2(127.26755, 60.89238)
+mouse_filter = 2
+texture = ExtResource("3_4rmi6")
+expand_mode = 1
+
+[node name="BG" type="TextureRect" parent="Mask" unique_id=1911774707]
+modulate = Color(0.90881085, 0.908811, 0.90881073, 1)
+self_modulate = Color(0.94369775, 0.9436977, 0.94369763, 1)
+clip_contents = true
+layout_mode = 0
+offset_left = -3.2081013
+offset_top = -6.3931065
+offset_right = 258.15848
+offset_bottom = 134.69232
+pivot_offset = Vector2(127.26755, 60.89238)
+mouse_filter = 2
+texture = ExtResource("3_4rmi6")
+expand_mode = 1
+
+[node name="WiiLogo2" type="TextureRect" parent="Mask" unique_id=530600708]
+modulate = Color(0.9019608, 0.9019608, 0.9019608, 0.18039216)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.251648
+offset_top = -17.542717
+offset_right = 28.093185
+offset_bottom = 20.457283
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_0i6d6")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Mask" unique_id=100981750]
+modulate = Color(1, 1, 1, 0.2901961)
+texture_repeat = 2
+position = Vector2(128.5, 52.122536)
+scale = Vector2(26.9, 3.144737)
+texture = ExtResource("5_4rmi6")
+region_enabled = true
+region_rect = Rect2(-0.08588219, -0.09438896, 10.085882, 76.54889)
+
+[node name="Noise" type="TextureRect" parent="Mask" unique_id=1453415982]
+modulate = Color(0.9372549, 0.9372549, 0.9372549, 0.05882353)
+layout_mode = 0
+offset_left = -10.208101
+offset_top = -6.3931065
+offset_right = 264.7919
+offset_bottom = 191.60689
+texture = SubResource("NoiseTexture2D_0i6d6")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=148861709]
+libraries/ = SubResource("AnimationLibrary_4rmi6")
+autoplay = &"new_animation"
+speed_scale = 0.3

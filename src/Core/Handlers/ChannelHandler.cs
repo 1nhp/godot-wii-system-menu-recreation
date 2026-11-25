@@ -9,9 +9,7 @@ namespace WSMR.Core.Handlers;
 
 public partial class ChannelHandler : Node
 {
-
-
-    [Export] public GridContainer ChannelGrid;
+    [Export] public FlowContainer ChannelGrid;
 
     public override void _Ready()
     {
@@ -23,10 +21,8 @@ public partial class ChannelHandler : Node
     public List<string> ChannelFiles = new List<string> { };
     public List<string> Scenes = new List<string> { };
 
-
     public void LoadChannels()
     {
-        // load the pck files
         string[] files = DirAccess.GetFilesAt("user://channels");
         foreach (string file in files)
         {
@@ -66,13 +62,15 @@ public partial class ChannelHandler : Node
 
         foreach (string scenePath in sceneFiles)
         {
-            var ChannelButton = ObjectHelper.Create<ChannelButton>("ChannelButton", new Vector2(0, 0), ChannelGrid.GetPath());
-            var Mask = ChannelButton.GetNode<TextureRect>("TextureRect");
+            for(int i = 0; i < 5; i++){
+                var ChannelButton = ObjectHelper.Create<ChannelButton>("ChannelButton", new Vector2(0, 0), ChannelGrid.GetPath());
+                var Mask = ChannelButton.GetNode<TextureRect>("TextureRect");
 
-            PackedScene packedScene = ResourceLoader.Load<PackedScene>(scenePath);
+                PackedScene packedScene = ResourceLoader.Load<PackedScene>(scenePath);
 
-            Node instance = packedScene.Instantiate();
-            Mask.AddChild(instance);
+                Node instance = packedScene.Instantiate();
+                Mask.AddChild(instance);
+            }
         }
     }
 }

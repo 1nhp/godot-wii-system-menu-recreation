@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bq18pq0x6yo2o" path="res://Assets/Sprites/ReferenceImages/Screenshot_20260812_135447.png" id="4_0m0wp"]
 [ext_resource type="Theme" uid="uid://tyv6axn4j1tc" path="res://Data/Themes/CircleButton.tres" id="6_wc5hv"]
 [ext_resource type="FontFile" uid="uid://cjrava8oc88hk" path="res://Assets/Fonts/CafeSTD.ttf" id="7_wc5hv"]
+[ext_resource type="PackedScene" uid="uid://cuhnsf4bba2m2" path="res://Scenes/UI/EmptyChannel.tscn" id="7_xmc1j"]
 [ext_resource type="Script" uid="uid://cdo42w1tganwp" path="res://src/UI/Components/CustomButton.cs" id="8_s8ik8"]
 [ext_resource type="Texture2D" uid="uid://c51ris8i31wvo" path="res://Assets/Sprites/Icons/WiiLogo.svg" id="8_wc5hv"]
 [ext_resource type="Texture2D" uid="uid://cme6g4xg1ceub" path="res://Assets/Sprites/Buttons/CircleButton.svg" id="10_s8ik8"]
@@ -19,14 +20,9 @@
 [ext_resource type="FontFile" uid="uid://dmvpretuujspn" path="res://Assets/Fonts/Digital-7.ttf" id="17_rvotc"]
 [ext_resource type="Script" uid="uid://dt3ho2phlym7d" path="res://src/Core/Handlers/ChannelHandler.cs" id="21_x4cv8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgqo7"]
-shader = ExtResource("15_qroc0")
-shader_parameter/mask_texture = ExtResource("3_qroc0")
-shader_parameter/invert = true
-
 [sub_resource type="Animation" id="Animation_qroc0"]
 resource_name = "BoardOpen"
-length = 0.53333336
+length = 0.539861
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,10 +30,10 @@ tracks/0/path = NodePath("BottomLayout:transform")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.06666667, 0.43333337),
+"times": PackedFloat32Array(0.11223938, 0.5314899),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, -700)]
+"values": [Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, -1000)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -46,19 +42,19 @@ tracks/1/path = NodePath("Channels:offset")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.06666667, 0.43333337),
+"times": PackedFloat32Array(0.11223938, 0.5314899),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -700)]
+"values": [Vector2(0, 0), Vector2(0, -1000)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RightButtons:rotation")
+tracks/2/path = NodePath("Board/RightButtons:rotation")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.06666667, 0.43333337),
+"times": PackedFloat32Array(0.06666666, 0.43333337),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 3.141592653589793]
@@ -66,11 +62,11 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("LeftButtons:rotation")
+tracks/3/path = NodePath("Board/LeftButtons:rotation")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.06666667, 0.43333334),
+"times": PackedFloat32Array(0.06666666, 0.4333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 3.141592653589793]
@@ -78,14 +74,38 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("RightButtons/HolderRight2/WiiMenuButton:_hasBeenPressed")
+tracks/4/path = NodePath("Channels:process_mode")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4875001),
+"times": PackedFloat32Array(0.06800117, 0.07147061),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [0, 4]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Board/RightButtons/HolderRight/WiiBoardButton:ShowPopup")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.009339953, 0.5236891),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Board/RightButtons/HolderRight2/WiiMenuButton:ShowPopup")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.49404934, 0.5235284),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_rvotc"]
@@ -117,7 +137,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RightButtons:rotation")
+tracks/2/path = NodePath("Board/RightButtons:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -129,7 +149,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("LeftButtons:rotation")
+tracks/3/path = NodePath("Board/LeftButtons:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -141,23 +161,105 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("RightButtons/HolderRight2/WiiMenuButton:_hasBeenPressed")
+tracks/4/path = NodePath("Channels/BG1_Top/Clock:offset_transform_position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Channels/BG1_Top/Clock:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Channels:process_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Board/RightButtons/HolderRight/WiiBoardButton:ShowPopup")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Board/RightButtons/HolderRight2/WiiMenuButton:ShowPopup")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xmc1j"]
+resource_name = "Scrolling"
+length = 0.23189263
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Channels/BG1_Top/Clock:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.09727657, 0.10738474, 0.21222314),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-100, 0), Vector2(100, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Channels/BG1_Top/Clock:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.04200022, 0.1491037, 0.23144862),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rvotc"]
 _data = {
 &"BoardOpen": SubResource("Animation_qroc0"),
-&"RESET": SubResource("Animation_rvotc")
+&"RESET": SubResource("Animation_rvotc"),
+&"Scrolling": SubResource("Animation_xmc1j")
 }
 
-[node name="SystemMenu" type="Control" unique_id=472227920 node_paths=PackedStringArray("_BoardButton", "_WiiMenuButton", "_animPlayer")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgqo7"]
+shader = ExtResource("15_qroc0")
+shader_parameter/mask_texture = ExtResource("3_qroc0")
+shader_parameter/invert = true
+
+[node name="SystemMenu" type="Control" unique_id=472227920 node_paths=PackedStringArray("_BoardButton", "_WiiMenuButton", "ChannelsContainer", "_board", "_channels", "_animPlayer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -165,137 +267,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0fbp6")
-_BoardButton = NodePath("RightButtons/HolderRight/WiiBoardButton")
-_WiiMenuButton = NodePath("RightButtons/HolderRight2/WiiMenuButton")
+_BoardButton = NodePath("Board/RightButtons/HolderRight/WiiBoardButton")
+_WiiMenuButton = NodePath("Board/RightButtons/HolderRight2/WiiMenuButton")
+ChannelsContainer = NodePath("Channels/ChannelsContainer")
+_board = NodePath("Board")
+_channels = NodePath("Channels")
 _animPlayer = NodePath("AnimationPlayer")
 
-[node name="Channels" type="CanvasLayer" parent="." unique_id=1098928144]
-layer = 0
-
-[node name="InfoText" type="Label" parent="Channels" unique_id=1341405738]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -551.5
-offset_top = -42.65625
-offset_right = 551.5
-offset_bottom = 42.65625
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_mtrkr")
-theme_override_font_sizes/font_size = 65
-text = "SCREEN NOT IMPLEMENTED YET"
-horizontal_alignment = 1
-
-[node name="Polygon2D" type="Polygon2D" parent="Channels" unique_id=919107161]
-visible = false
-texture = ExtResource("2_vo4q0")
-polygon = PackedVector2Array(0, 523, 239, 522, 283, 529, 336, 552, 416, 592, 491, 619, 528, 618, 638.6669, 616, 768, 616, 803, 610, 845, 595, 890, 576, 936, 552, 970, 535, 1013, 521, 1280, 520, 1280, 0, 0, 0)
-
-[node name="BG" type="TextureRect" parent="Channels" unique_id=1200167438]
-z_index = -1
-material = SubResource("ShaderMaterial_tgqo7")
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -720.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-texture = ExtResource("2_vo4q0")
-expand_mode = 1
-
-[node name="BG1_Top" type="TextureRect" parent="Channels" unique_id=666405654]
-z_index = -1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1672.0
-offset_bottom = -264.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("2_vo4q0")
-expand_mode = 1
-
-[node name="Time" type="RichTextLabel" parent="Channels" unique_id=2107879419]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -115.0
-offset_top = -162.8125
-offset_right = 115.0
-offset_bottom = -88.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 1
-theme = ExtResource("1_mtrkr")
-theme_override_colors/default_color = Color(0.60784316, 0.60784316, 0.60784316, 1)
-theme_override_fonts/normal_font = ExtResource("17_rvotc")
-theme_override_font_sizes/normal_font_size = 70
-bbcode_enabled = true
-text = "8 17 PM"
-horizontal_alignment = 2
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="TimeDot" type="RichTextLabel" parent="Channels" unique_id=82093478]
-clip_contents = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -14.5
-offset_top = -165.8125
-offset_right = 0.5
-offset_bottom = -91.0
-grow_horizontal = 2
-grow_vertical = 0
-focus_mode = 0
-mouse_filter = 1
-theme = ExtResource("1_mtrkr")
-theme_override_colors/default_color = Color(0.60784316, 0.60784316, 0.60784316, 1)
-theme_override_fonts/normal_font = ExtResource("17_rvotc")
-theme_override_font_sizes/normal_font_size = 83
-bbcode_enabled = true
-text = "[pulse freq=2 color=#ffffff00]:[/pulse]"
-autowrap_mode = 0
-horizontal_alignment = 2
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="ChannelGrid" type="GridContainer" parent="Channels" unique_id=1162491057]
-z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -536.5
-offset_top = -344.0
-offset_right = 536.5
-offset_bottom = 152.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 11
-theme_override_constants/v_separation = 15
-columns = 4
-
-[node name="Screenshot20260812135447" type="Sprite2D" parent="Channels" unique_id=1542231769]
-visible = false
-modulate = Color(1, 1, 1, 0.4117647)
-position = Vector2(640, 360.00003)
-scale = Vector2(0.69830877, 0.7192807)
-texture = ExtResource("4_0m0wp")
-
 [node name="BottomLayout" type="CanvasLayer" parent="." unique_id=1223278689]
-layer = 0
 
 [node name="BottomLayoutMask" type="TextureRect" parent="BottomLayout" unique_id=686086060]
 visible = false
@@ -327,7 +306,7 @@ grow_vertical = 2
 texture = ExtResource("16_qroc0")
 expand_mode = 3
 
-[node name="Bar" type="HBoxContainer" parent="BottomLayout" unique_id=1117346616]
+[node name="Bar" type="HBoxContainer" parent="BottomLayout" unique_id=1403237949]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -341,7 +320,7 @@ grow_vertical = 0
 mouse_filter = 2
 theme_override_constants/separation = -7
 
-[node name="LayoutOutlineLeft" type="TextureRect" parent="BottomLayout/Bar" unique_id=1406708451]
+[node name="LayoutOutlineLeft" type="TextureRect" parent="BottomLayout/Bar" unique_id=660439848]
 modulate = Color(0.34509805, 0.7137255, 0.84313726, 1)
 z_index = 1
 custom_minimum_size = Vector2(639.71, 0)
@@ -355,7 +334,7 @@ expand_mode = 1
 flip_h = true
 flip_v = true
 
-[node name="LayoutOutlineRight" type="TextureRect" parent="BottomLayout/Bar" unique_id=1748250263]
+[node name="LayoutOutlineRight" type="TextureRect" parent="BottomLayout/Bar" unique_id=1107071026]
 modulate = Color(0.34509805, 0.7137255, 0.84313726, 1)
 z_index = 1
 custom_minimum_size = Vector2(660, 0)
@@ -368,7 +347,7 @@ expand_mode = 1
 flip_v = true
 
 [node name="Board" type="CanvasLayer" parent="." unique_id=457056322]
-layer = -1
+layer = 0
 
 [node name="BG2" type="TextureRect" parent="Board" unique_id=1890406928]
 visibility_layer = 512
@@ -383,17 +362,17 @@ texture = ExtResource("16_qroc0")
 expand_mode = 3
 
 [node name="Date" type="Label" parent="Board" unique_id=2141419932]
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -66.5
-offset_top = 264.0
+offset_top = -90.8125
 offset_right = 66.5
-offset_bottom = 338.8125
+offset_bottom = -16.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 mouse_filter = 1
 theme = ExtResource("1_mtrkr")
 theme_override_colors/font_color = Color(0.4862745, 0.49019608, 0.49019608, 1)
@@ -402,19 +381,8 @@ theme_override_font_sizes/font_size = 42
 text = "Date"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1287828994]
-libraries/ = SubResource("AnimationLibrary_rvotc")
-
-[node name="Clock" type="Control" parent="." unique_id=226692674 node_paths=PackedStringArray("DateLabel", "TimeLabel")]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("17_nmh87")
-DateLabel = NodePath("../Board/Date")
-TimeLabel = NodePath("../Channels/Time")
-
-[node name="RightButtons" type="Control" parent="." unique_id=1527786549]
-layout_mode = 1
+[node name="RightButtons" type="Control" parent="Board" unique_id=1527786549]
+layout_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -427,8 +395,9 @@ offset_bottom = -144.0
 grow_horizontal = 0
 grow_vertical = 0
 pivot_offset = Vector2(-8, 80)
+mouse_filter = 2
 
-[node name="HolderRight" type="TextureRect" parent="RightButtons" unique_id=441503352]
+[node name="HolderRight" type="TextureRect" parent="Board/RightButtons" unique_id=441503352]
 self_modulate = Color(1, 1, 1, 0.32941177)
 layout_mode = 1
 anchors_preset = 3
@@ -448,7 +417,7 @@ texture = ExtResource("11_ekyxc")
 expand_mode = 1
 flip_h = true
 
-[node name="WiiBoardButton" type="Button" parent="RightButtons/HolderRight" unique_id=755857906]
+[node name="WiiBoardButton" type="Button" parent="Board/RightButtons/HolderRight" unique_id=755857906]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -476,7 +445,7 @@ PopupText = "Wii Board"
 ShowPopup = true
 metadata/_custom_type_script = "uid://cdo42w1tganwp"
 
-[node name="WiiMailButtonShadow" type="TextureRect" parent="RightButtons/HolderRight/WiiBoardButton" unique_id=1645587489]
+[node name="WiiMailButtonShadow" type="TextureRect" parent="Board/RightButtons/HolderRight/WiiBoardButton" unique_id=1645587489]
 modulate = Color(0.011764706, 0.011764706, 0.011764706, 0.1254902)
 show_behind_parent = true
 layout_mode = 0
@@ -487,7 +456,7 @@ offset_bottom = 125.71509
 texture = ExtResource("10_s8ik8")
 expand_mode = 1
 
-[node name="Shadow" type="TextureRect" parent="RightButtons/HolderRight" unique_id=277831572]
+[node name="Shadow" type="TextureRect" parent="Board/RightButtons/HolderRight" unique_id=277831572]
 modulate = Color(0, 0, 0, 0.12156863)
 show_behind_parent = true
 layout_mode = 0
@@ -499,7 +468,7 @@ texture = ExtResource("11_ekyxc")
 expand_mode = 1
 flip_h = true
 
-[node name="HolderRight2" type="TextureRect" parent="RightButtons" unique_id=843969350]
+[node name="HolderRight2" type="TextureRect" parent="Board/RightButtons" unique_id=843969350]
 self_modulate = Color(1, 1, 1, 0.32941177)
 layout_mode = 1
 anchors_preset = 2
@@ -515,7 +484,7 @@ mouse_filter = 2
 texture = ExtResource("11_ekyxc")
 expand_mode = 1
 
-[node name="Shadow" type="TextureRect" parent="RightButtons/HolderRight2" unique_id=1849009579]
+[node name="Shadow" type="TextureRect" parent="Board/RightButtons/HolderRight2" unique_id=1849009579]
 modulate = Color(0, 0, 0, 0.12156863)
 show_behind_parent = true
 layout_mode = 0
@@ -526,7 +495,7 @@ mouse_filter = 2
 texture = ExtResource("11_ekyxc")
 expand_mode = 1
 
-[node name="WiiMenuButton" type="Button" parent="RightButtons/HolderRight2" unique_id=522280432]
+[node name="WiiMenuButton" type="Button" parent="Board/RightButtons/HolderRight2" unique_id=522280432]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 2
@@ -549,9 +518,12 @@ icon = ExtResource("8_wc5hv")
 icon_alignment = 1
 script = ExtResource("8_s8ik8")
 ClickSound = "ButtonCancel"
+_popupOffset = Vector2(30, 70)
+PopupText = "Wii Menu"
+ShowPopup = true
 metadata/_custom_type_script = "uid://cdo42w1tganwp"
 
-[node name="WiiButtonShadow" type="TextureRect" parent="RightButtons/HolderRight2/WiiMenuButton" unique_id=537712908]
+[node name="WiiButtonShadow" type="TextureRect" parent="Board/RightButtons/HolderRight2/WiiMenuButton" unique_id=537712908]
 modulate = Color(0.011764706, 0.011764706, 0.011764706, 0.1254902)
 show_behind_parent = true
 layout_mode = 0
@@ -562,8 +534,8 @@ offset_bottom = 125.71509
 texture = ExtResource("10_s8ik8")
 expand_mode = 1
 
-[node name="LeftButtons" type="Control" parent="." unique_id=556781430]
-layout_mode = 1
+[node name="LeftButtons" type="Control" parent="Board" unique_id=556781430]
+layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -573,7 +545,7 @@ offset_bottom = 8.0
 grow_vertical = 0
 pivot_offset = Vector2(0, -69)
 
-[node name="HolderLeft" type="TextureRect" parent="LeftButtons" unique_id=1338835261]
+[node name="HolderLeft" type="TextureRect" parent="Board/LeftButtons" unique_id=1338835261]
 self_modulate = Color(1, 1, 1, 0.32941177)
 layout_mode = 1
 anchors_preset = 2
@@ -588,7 +560,7 @@ mouse_filter = 2
 texture = ExtResource("11_ekyxc")
 expand_mode = 1
 
-[node name="Shadow" type="TextureRect" parent="LeftButtons/HolderLeft" unique_id=939973181]
+[node name="Shadow" type="TextureRect" parent="Board/LeftButtons/HolderLeft" unique_id=939973181]
 modulate = Color(0, 0, 0, 0.12156863)
 show_behind_parent = true
 layout_mode = 0
@@ -599,7 +571,7 @@ mouse_filter = 2
 texture = ExtResource("11_ekyxc")
 expand_mode = 1
 
-[node name="WiiButton" type="Button" parent="LeftButtons/HolderLeft" unique_id=1125277206]
+[node name="WiiButton" type="Button" parent="Board/LeftButtons/HolderLeft" unique_id=1125277206]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 2
@@ -625,7 +597,7 @@ PopupText = "Wii Settings"
 ShowPopup = true
 metadata/_custom_type_script = "uid://cdo42w1tganwp"
 
-[node name="WiiButtonShadow" type="TextureRect" parent="LeftButtons/HolderLeft/WiiButton" unique_id=1485494512]
+[node name="WiiButtonShadow" type="TextureRect" parent="Board/LeftButtons/HolderLeft/WiiButton" unique_id=1485494512]
 modulate = Color(0.011764706, 0.011764706, 0.011764706, 0.1254902)
 show_behind_parent = true
 layout_mode = 0
@@ -636,7 +608,7 @@ offset_bottom = 125.71509
 texture = ExtResource("10_s8ik8")
 expand_mode = 1
 
-[node name="HolderLeft2" type="TextureRect" parent="LeftButtons" unique_id=1737926049]
+[node name="HolderLeft2" type="TextureRect" parent="Board/LeftButtons" unique_id=1737926049]
 self_modulate = Color(1, 1, 1, 0.32941177)
 layout_mode = 1
 anchors_preset = 2
@@ -653,7 +625,7 @@ mouse_filter = 2
 texture = ExtResource("11_ekyxc")
 expand_mode = 1
 
-[node name="Shadow" type="TextureRect" parent="LeftButtons/HolderLeft2" unique_id=1936107054]
+[node name="Shadow" type="TextureRect" parent="Board/LeftButtons/HolderLeft2" unique_id=1936107054]
 modulate = Color(0, 0, 0, 0.12156863)
 show_behind_parent = true
 layout_mode = 0
@@ -664,7 +636,7 @@ mouse_filter = 2
 texture = ExtResource("11_ekyxc")
 expand_mode = 1
 
-[node name="WiiButton" type="Button" parent="LeftButtons/HolderLeft2" unique_id=2014988128]
+[node name="WiiButton" type="Button" parent="Board/LeftButtons/HolderLeft2" unique_id=2014988128]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 2
@@ -687,7 +659,7 @@ icon_alignment = 1
 script = ExtResource("8_s8ik8")
 metadata/_custom_type_script = "uid://cdo42w1tganwp"
 
-[node name="WiiButtonShadow" type="TextureRect" parent="LeftButtons/HolderLeft2/WiiButton" unique_id=932303130]
+[node name="WiiButtonShadow" type="TextureRect" parent="Board/LeftButtons/HolderLeft2/WiiButton" unique_id=932303130]
 modulate = Color(0.011764706, 0.011764706, 0.011764706, 0.1254902)
 show_behind_parent = true
 layout_mode = 0
@@ -698,6 +670,297 @@ offset_bottom = 125.71509
 texture = ExtResource("10_s8ik8")
 expand_mode = 1
 
+[node name="Clock" type="Control" parent="Board" unique_id=226692674 node_paths=PackedStringArray("DateLabel", "TimeLabel")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_nmh87")
+DateLabel = NodePath("../Date")
+TimeLabel = NodePath("../../Channels/BG1_Top/Clock/Time")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1287828994]
+libraries/ = SubResource("AnimationLibrary_rvotc")
+
 [node name="ChannelHandler" type="Node" parent="." unique_id=1945071579 node_paths=PackedStringArray("ChannelGrid")]
 script = ExtResource("21_x4cv8")
-ChannelGrid = NodePath("../Channels/ChannelGrid")
+ChannelGrid = NodePath("../Channels/ChannelsContainer/ChannelsGrid")
+
+[node name="Channels" type="CanvasLayer" parent="." unique_id=1098928144]
+layer = 0
+
+[node name="BG" type="TextureRect" parent="Channels" unique_id=1200167438]
+z_index = -1
+material = SubResource("ShaderMaterial_tgqo7")
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -720.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("2_vo4q0")
+expand_mode = 1
+
+[node name="BG1_Top" type="TextureRect" parent="Channels" unique_id=666405654]
+z_index = -1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1672.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_vo4q0")
+expand_mode = 1
+
+[node name="Clock" type="Control" parent="Channels/BG1_Top" unique_id=958534448]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 136.0
+offset_right = 20.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+
+[node name="Time" type="RichTextLabel" parent="Channels/BG1_Top/Clock" unique_id=2107879419]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.99994
+offset_top = -74.8125
+offset_right = 114.99994
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme = ExtResource("1_mtrkr")
+theme_override_colors/default_color = Color(0.60784316, 0.60784316, 0.60784316, 1)
+theme_override_fonts/normal_font = ExtResource("17_rvotc")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "8 17 PM"
+horizontal_alignment = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TimeDot" type="RichTextLabel" parent="Channels/BG1_Top/Clock" unique_id=82093478]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 4.5
+offset_top = -77.8125
+offset_right = 19.5
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+mouse_filter = 1
+theme = ExtResource("1_mtrkr")
+theme_override_colors/default_color = Color(0.60784316, 0.60784316, 0.60784316, 1)
+theme_override_fonts/normal_font = ExtResource("17_rvotc")
+theme_override_font_sizes/normal_font_size = 83
+bbcode_enabled = true
+text = "[pulse freq=2 color=#ffffff00]:[/pulse]"
+autowrap_mode = 0
+horizontal_alignment = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Screenshot20260812135447" type="Sprite2D" parent="Channels" unique_id=1542231769]
+visible = false
+modulate = Color(1, 1, 1, 0.4117647)
+position = Vector2(640, 360.00003)
+scale = Vector2(0.69830877, 0.7192807)
+texture = ExtResource("4_0m0wp")
+
+[node name="ChannelsContainer" type="Control" parent="Channels" unique_id=928977385]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="EmptyChannelsGrid" type="GridContainer" parent="Channels/ChannelsContainer" unique_id=192101523]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 58.0
+offset_right = 4425.0
+offset_bottom = 554.0
+grow_vertical = 2
+theme_override_constants/h_separation = 11
+theme_override_constants/v_separation = 15
+columns = 16
+
+[node name="EmptyChannel" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=909373460 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel2" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1725866935 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel3" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1211063820 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel4" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=670358382 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel5" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1697832774 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel6" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=167536624 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel7" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=777171147 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel8" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1990859079 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel9" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=82751793 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel10" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1429184233 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel11" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1513024425 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel12" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1297159526 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel13" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1808544510 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel14" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=894630803 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel15" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=188540541 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel16" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=166660802 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel17" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=285037988 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel18" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1607971162 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel19" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1429394045 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel20" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1739452392 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel21" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=182785333 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel22" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=872721134 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel23" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1848516068 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel24" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=638150460 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel25" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1759745837 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel26" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=119167376 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel27" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=786884300 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel28" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1140897868 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel29" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1714389238 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel30" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=727395069 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel31" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=445150659 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel32" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=850166040 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel33" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=241398093 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel34" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=876659474 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel35" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1971603789 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel36" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1264204827 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel37" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=953266128 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel38" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1977260953 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel39" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1856530161 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel40" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=884175587 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel41" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1030774532 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel42" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1593164977 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel43" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=2116211504 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel44" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1019403204 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel45" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=547541589 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel46" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1715624005 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel47" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=1966923306 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="EmptyChannel48" parent="Channels/ChannelsContainer/EmptyChannelsGrid" unique_id=823796384 instance=ExtResource("7_xmc1j")]
+layout_mode = 2
+
+[node name="ChannelsGrid" type="FlowContainer" parent="Channels/ChannelsContainer" unique_id=1246424660]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 58.0
+offset_right = 4448.0
+offset_bottom = 554.0
+grow_vertical = 2
+theme_override_constants/h_separation = 11
+theme_override_constants/v_separation = 15
+vertical = true

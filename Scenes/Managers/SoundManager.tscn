@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://chchnaq8qh3fc" path="res://Assets/SFX/KeyboardType.ogg" id="8_gv4pr"]
 [ext_resource type="AudioStream" uid="uid://c2w2rdalo01j1" path="res://Assets/SFX/KeyboardSpace.ogg" id="8_soayk"]
 [ext_resource type="AudioStream" uid="uid://dxpyp5vhgn328" path="res://Assets/SFX/KeyboardCantType.ogg" id="9_hlo8y"]
+[ext_resource type="AudioStream" uid="uid://di42f5m1t8v6k" path="res://Assets/SFX/ScrollChannels.ogg" id="12_spd87"]
 [ext_resource type="AudioStream" uid="uid://cnlvm6eyvlrev" path="res://Assets/SFX/Paper.ogg" id="13_7mc56"]
 [ext_resource type="AudioStream" uid="uid://ca3264137awhr" path="res://Assets/SFX/Wrong.ogg" id="14_rvu3w"]
 
@@ -21,16 +22,19 @@ script = ExtResource("1_6mkid")
 
 [node name="ButtonDecide" type="AudioStreamPlayer" parent="." unique_id=1957363689]
 stream = ExtResource("1_i85mc")
+volume_db = -4.0
 max_polyphony = 4
 bus = &"Reverb High"
 
 [node name="ButtonCancel" type="AudioStreamPlayer" parent="." unique_id=1892865023]
 stream = ExtResource("3_3tmmh")
+volume_db = -4.0
 max_polyphony = 4
 bus = &"Reverb High"
 
 [node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1863555994]
 stream = ExtResource("3_whrjf")
+volume_db = -4.0
 max_polyphony = 4
 bus = &"Reverb Low"
 
@@ -64,6 +68,10 @@ bus = &"Reverb Low"
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=1326810732]
 stream = ExtResource("5_qns2u")
+bus = &"Sounds"
+
+[node name="ScrollChannels" type="AudioStreamPlayer" parent="." unique_id=767916924]
+stream = ExtResource("12_spd87")
 bus = &"Sounds"
 
 [node name="NotificationOpen" type="AudioStreamPlayer" parent="." unique_id=1685331837]

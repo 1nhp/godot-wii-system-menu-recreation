@@ -18,13 +18,16 @@ ShowPopup = true
 metadata/_custom_type_script = "uid://cng03e0288wlv"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=350292228]
+modulate = Color(0.8, 0.8, 0.8, 1)
+self_modulate = Color(0.8509804, 0.8509804, 0.8509804, 1)
 clip_children = 2
 clip_contents = true
 layout_mode = 0
-offset_left = 0.5
-offset_right = 259.02747
-offset_bottom = 139.28418
-pivot_offset = Vector2(130.5, 72)
+offset_left = 2.2081013
+offset_top = 2.3931065
+offset_right = 258.15848
+offset_bottom = 134.69234
+pivot_offset = Vector2(127.26755, 60.89238)
 mouse_filter = 2
 texture = ExtResource("3_0kwix")
 expand_mode = 1
